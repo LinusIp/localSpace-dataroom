@@ -261,7 +261,7 @@ h3 .badge { margin-left: 6px; }
 @page {
   size: A4;
   margin: 18mm 16mm 20mm;
-  @bottom-left { content: "localSpace, investor data room, 25 October 2026"; font: 8pt Onest, system-ui, sans-serif; color: #4A4C6E; }
+  @bottom-left { content: "localSpace, investor data room, 26 October 2026"; font: 8pt Onest, system-ui, sans-serif; color: #4A4C6E; }
   @bottom-right { content: counter(page) " / " counter(pages); font: 8pt Onest, system-ui, sans-serif; color: #4A4C6E; }
 }
 @media print {

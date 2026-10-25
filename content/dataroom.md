@@ -2,7 +2,7 @@
 
 This file holds every word and number for the investor page. The numbers in `data/*.json` are the same numbers in machine form. Use them as given. Don't round differently and don't invent new ones.
 
-Last updated: 25 October 2026.
+Last updated: 26 October 2026.
 
 **Layout:** CLAUDE.md sections 3 and 4 decide the page order and design. Where this file mentions cards, big numbers, circles or similar visuals, treat that as an old hint and follow CLAUDE.md. Take only the words, numbers and links from this file.
 
@@ -25,7 +25,7 @@ Last updated: 25 October 2026.
 - **Estimates** carry an "estimate" badge, and each one has a "How we got this" box that shows the formula and a worked example.
 - Every outside number links to its source (full list at the bottom).
 - Money is in US dollars, at October 2026 prices.
-- Last updated: 25 October 2026.
+- Last updated: 26 October 2026.
 
 ## 1. Snapshot (four big numbers)
 
@@ -237,7 +237,7 @@ Turkmenistan's GDP figure differs between sources ($77.4B or $49.8B). With the l
 - One person, one computer.
 - Chat, pictures and files.
 - Help from the community.
-- Plugin kit open source (Apache 2.0) now; the app is planned to follow.
+- Source code visible on GitHub, all rights reserved.
 
 **Business: $9 a person a month, billed yearly.**
 - One company server for everyone, so employees don't need strong laptops.
@@ -351,9 +351,8 @@ Why it matters to an investor:
 | 18 October 2026 | Pictures in chat added, after a request from a tester with an RTX 5080. |
 | 20 October 2026 | Ran on a laptop with no graphics card (Iris Xe, 8 GB): 6–7 tokens a second. |
 | October 2026 | Public preview v0.2.0-preview.1 released. Landing page with a download counter. Telegram community opened. |
-| 21 October 2026 | Licence plan decided: Apache 2.0 for the personal app and the plugin kit; the company server stays closed. |
+| 21 October 2026 | Licensing reviewed: source code stays visible on GitHub, all rights reserved; no open-source licence decided. |
 | 24 October 2026 | Handwritten maths test passed in English, Russian and Uzbek. |
-| 25 October 2026 | Plugin kit licensed under Apache 2.0; the app is planned to follow. |
 | 11–12 November 2026 | Release 0.2.0 check (planned). |
 
 ## 12. Team
@@ -369,9 +368,7 @@ Why it matters to an investor:
 - **Company:** not registered yet. Registering is the first item in the use of funds.
 - **Ownership:** 100% founder.
 - **Licence:**
-  - The plugin kit (SDK) is Apache 2.0 now.
-  - The personal desktop app is planned to follow, once the company-server code is separated out.
-  - The company server, extensions, marketplace and signing stay closed.
+  - Source code is visible on GitHub, all rights reserved. Plugin system, SDK, multi-user and company server are closed. No open-source licence decided.
   - Copyright: Abdulloh Shavkatjonov.
 - **Spending to date:** AI tools provided through the idrock accelerator programme. No other money raised.
 - **Privacy:** no telemetry; nothing is sent automatically from the app.
