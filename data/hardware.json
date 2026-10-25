@@ -8,7 +8,8 @@
   "tokens_per_person": 15,
   "kept_free_gb": 1.5,
   "words_per_token": 0.75,
-  "team_size_rule": "3x-5x chats at once"
+  "team_size_rule": "3x-5x chats at once",
+  "hardware_cost_rule": "machine price (middle of range) / middle of team size; per month = spread over 3 years. This is the company's one-time hardware cost, not localSpace's price (Personal is free; Business is $9 a person a month)."
  },
  "model_classes": [
   {
@@ -161,8 +162,7 @@
      "words_per_sec": null
     }
    },
-   "serving": [],
-   "price_per_person_served_usd": null
+   "serving": []
   },
   {
    "id": "laptop-4gb",
@@ -210,8 +210,7 @@
      "words_per_sec": null
     }
    },
-   "serving": [],
-   "price_per_person_served_usd": null
+   "serving": []
   },
   {
    "id": "laptop-8gb",
@@ -262,8 +261,7 @@
      "words_per_sec": null
     }
    },
-   "serving": [],
-   "price_per_person_served_usd": null
+   "serving": []
   },
   {
    "id": "desktop-16gb",
@@ -321,10 +319,11 @@
      "team_size": [
       18,
       30
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 77,
+     "hardware_cost_per_person_month_usd": 2.1
     }
-   ],
-   "price_per_person_served_usd": 77
+   ]
   },
   {
    "id": "desktop-24gb",
@@ -382,7 +381,9 @@
      "team_size": [
       36,
       60
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 51,
+     "hardware_cost_per_person_month_usd": 1.4
     },
     {
      "model_class": "Fast mixture-of-experts, 20-35B",
@@ -390,10 +391,11 @@
      "team_size": [
       21,
       35
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 88,
+     "hardware_cost_per_person_month_usd": 2.4
     }
-   ],
-   "price_per_person_served_usd": 51
+   ]
   },
   {
    "id": "minipc-128gb",
@@ -451,7 +453,9 @@
      "team_size": [
       9,
       15
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 296,
+     "hardware_cost_per_person_month_usd": 8.2
     },
     {
      "model_class": "Fast mixture-of-experts, 20-35B",
@@ -459,7 +463,9 @@
      "team_size": [
       15,
       25
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 178,
+     "hardware_cost_per_person_month_usd": 4.9
     },
     {
      "model_class": "Very large mixture-of-experts, 100-122B",
@@ -467,10 +473,11 @@
      "team_size": [
       9,
       15
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 296,
+     "hardware_cost_per_person_month_usd": 8.2
     }
-   ],
-   "price_per_person_served_usd": 178
+   ]
   },
   {
    "id": "dgx-spark",
@@ -528,7 +535,9 @@
      "team_size": [
       9,
       15
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 579,
+     "hardware_cost_per_person_month_usd": 16.1
     },
     {
      "model_class": "Fast mixture-of-experts, 20-35B",
@@ -536,7 +545,9 @@
      "team_size": [
       15,
       25
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 348,
+     "hardware_cost_per_person_month_usd": 9.7
     },
     {
      "model_class": "Very large mixture-of-experts, 100-122B",
@@ -544,10 +555,11 @@
      "team_size": [
       9,
       15
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 579,
+     "hardware_cost_per_person_month_usd": 16.1
     }
-   ],
-   "price_per_person_served_usd": 348
+   ]
   },
   {
    "id": "workstation-96gb",
@@ -605,7 +617,9 @@
      "team_size": [
       72,
       120
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 167,
+     "hardware_cost_per_person_month_usd": 4.6
     },
     {
      "model_class": "Fast mixture-of-experts, 20-35B",
@@ -613,7 +627,9 @@
      "team_size": [
       105,
       175
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 114,
+     "hardware_cost_per_person_month_usd": 3.2
     },
     {
      "model_class": "Very large mixture-of-experts, 100-122B",
@@ -621,10 +637,11 @@
      "team_size": [
       66,
       110
-     ]
+     ],
+     "hardware_cost_per_person_once_usd": 182,
+     "hardware_cost_per_person_month_usd": 5.1
     }
-   ],
-   "price_per_person_served_usd": 114
+   ]
   }
  ]
 }

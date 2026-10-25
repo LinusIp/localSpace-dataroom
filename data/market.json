@@ -1,4 +1,13 @@
 {
+ "base_year": 2025,
+ "base": {
+  "tam_busd": 8.65,
+  "sam_musd": 42.8,
+  "som_usd": 0,
+  "tam_source": "GMI Insights, Enterprise LLM Market: $8.65B in 2025 (of which on-premises $1.55B)",
+  "sam_source": "IMF 2025: Central Asia $570.6B of world $115.3T = 0.495%",
+  "som_note": "No revenue yet"
+ },
  "central_asia_gdp_share": 0.0049491240242844755,
  "price_per_seat_year": 108,
  "years": [
@@ -9,46 +18,11 @@
   2029,
   2030
  ],
+ "note": "2025 is the same in every case. Min, mid and max differ only in growth after 2025. 2026 SOM is actual: no revenue.",
  "scenarios": {
   "min": {
-   "tam_label": "Narrow: LLM software run on companies' own servers",
-   "tam_source": "GMI Insights, Enterprise LLM Market (on-premises segment): $1.55B in 2025, 14.8% a year",
-   "tam_busd": [
-    1.55,
-    1.78,
-    2.04,
-    2.35,
-    2.69,
-    3.09
-   ],
-   "sam_musd": [
-    7.7,
-    8.8,
-    10.1,
-    11.6,
-    13.3,
-    15.3
-   ],
-   "som_seats": [
-    0,
-    0,
-    60,
-    400,
-    1000,
-    2000
-   ],
-   "som_musd": [
-    0.0,
-    0.0,
-    0.006,
-    0.043,
-    0.108,
-    0.216
-   ]
-  },
-  "mid": {
-   "tam_label": "Middle: all company spending on LLMs (the spend local AI competes for)",
-   "tam_source": "GMI Insights, Enterprise LLM Market: $8.65B in 2025, 13.5% a year",
+   "growth_per_year": 0.135,
+   "growth_source": "GMI Insights, Enterprise LLM Market: 13.5% a year (2026-2035)",
    "tam_busd": [
     8.65,
     9.82,
@@ -68,6 +42,42 @@
    "som_seats": [
     0,
     0,
+    60,
+    400,
+    1000,
+    2000
+   ],
+   "som_musd": [
+    0.0,
+    0.0,
+    0.006,
+    0.043,
+    0.108,
+    0.216
+   ]
+  },
+  "mid": {
+   "growth_per_year": 0.202,
+   "growth_source": "Market.us, Sovereign AI Market: 20.2% a year (2026-2035)",
+   "tam_busd": [
+    8.65,
+    10.4,
+    12.5,
+    15.02,
+    18.06,
+    21.7
+   ],
+   "sam_musd": [
+    42.8,
+    51.5,
+    61.9,
+    74.3,
+    89.4,
+    107.4
+   ],
+   "som_seats": [
+    0,
+    0,
     300,
     2000,
     5900,
@@ -83,23 +93,23 @@
    ]
   },
   "max": {
-   "tam_label": "Broad: on-premises enterprise AI of every kind",
-   "tam_source": "Grand View Research, Enterprise AI Market: $155.2B by 2030, 37.6% a year; on-premises ≈34.2% (100% − 65.8% cloud)",
+   "growth_per_year": 0.283,
+   "growth_source": "Research and Markets, Enterprise LLM Market: 28.3% a year (2025-2033)",
    "tam_busd": [
-    10.76,
-    14.81,
-    20.37,
-    28.03,
-    38.57,
-    53.08
+    8.65,
+    11.1,
+    14.24,
+    18.27,
+    23.44,
+    30.07
    ],
    "sam_musd": [
-    53.3,
-    73.3,
-    100.8,
-    138.7,
-    190.9,
-    262.7
+    42.8,
+    54.9,
+    70.5,
+    90.4,
+    116.0,
+    148.8
    ],
    "som_seats": [
     0,

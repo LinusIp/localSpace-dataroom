@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>localSpace: investor data room</title>
+<meta name="description" content="localSpace investor data room: private AI that runs on your own computer. Pre-seed, raising $25,000, October 2026.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preload" href="assets/fonts/onest-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body>
+<a class="skip" href="#summary">Skip to the summary</a>
+
+<div class="layout">
+
+<aside class="toc-col">
+  <details class="toc" open>
+    <summary>Contents</summary>
+    <nav aria-label="Contents">
+      <ol class="toc-main">
+        <li><a href="#summary"><span>1</span>Executive summary</a></li>
+        <li><a href="#problem"><span>2</span>Problem</a></li>
+        <li><a href="#product"><span>3</span>Product</a></li>
+        <li><a href="#traction"><span>4</span>Traction and proof</a></li>
+        <li><a href="#advantage"><span>5</span>Competitive position</a></li>
+        <li><a href="#market"><span>6</span>Market</a></li>
+        <li><a href="#model"><span>7</span>Business model</a></li>
+        <li><a href="#projections"><span>8</span>Projections</a></li>
+        <li><a href="#funds"><span>9</span>Use of funds</a></li>
+        <li><a href="#team"><span>10</span>Team</a></li>
+        <li><a href="#company"><span>11</span>Company, legal and risks</a></li>
+      </ol>
+      <p class="toc-head">Appendices</p>
+      <ol class="toc-app">
+        <li><a href="#hardware"><span>A</span>Hardware, speed and capacity</a></li>
+        <li><a href="#gpu"><span>B</span>GPU fine-tuning plan</a></li>
+        <li><a href="#method"><span>C</span>Method and glossary</a></li>
+        <li><a href="#history"><span>D</span>History</a></li>
+        <li><a href="#sources"><span>E</span>Sources</a></li>
+      </ol>
+    </nav>
+  </details>
+</aside>
+
+<main class="doc">
+
+<header class="mast">
+  <img class="logo" src="assets/img/logo.png" alt="localSpace" width="124" height="36">
+  <p>Investor data room · Last updated <time datetime="2026-10-24">24 October 2026</time></p>
+</header>
+
+<!-- 1 -->
+<section id="summary" class="sec">
+  <h2><span class="n">1.</span> Executive summary</h2>
+  <div class="summary">
+    <div class="sum-text">
+      <h1>localSpace</h1>
+      <p class="tagline">Private AI that runs on your own computer. Offline. On the laptop or server you already have. Built in Uzbekistan for everyone.</p>
+      <p>localSpace is one app that runs open AI models on the computer a person already has, fully offline: it checks the machine and picks the model that runs well on it. Personal use is free. Companies pay $9 a person a month, billed yearly, for one company server with sign-in, shared documents and our support; the company server edition is planned for 2027. A public preview is live, 10+ testers have run it on their own laptops, and it writes about 19 words a second on a 4 GB laptop graphics card (our measurement). We are raising $25,000 pre-seed for 12 months to register the company, sign the installer, prove what runs where, make small models better through fine-tuning, and win our first 3 paying companies.</p>
+      <p class="actions">
+        <a class="btn" href="https://linusip.github.io/localLabs/" target="_blank" rel="noopener">Download preview</a>
+        <button class="btn js-only" type="button" data-print>Download this page as PDF</button>
+        <a class="btn" href="mailto:locallabs.io@gmail.com">Contact</a>
+      </p>
+    </div>
+    <div class="facts-box">
+      <table class="tbl facts" id="key-facts">
+        <caption>Key facts</caption>
+        <tbody>
+          <tr><th scope="row">Stage</th><td>Pre-seed</td></tr>
+          <tr><th scope="row">Raising</th><td>$25,000 for 12 months</td></tr>
+          <tr><th scope="row">Product</th><td>Public preview, live</td></tr>
+          <tr><th scope="row">Testers</th><td>10+</td></tr>
+          <tr><th scope="row">Speed on a 4 GB laptop</th><td>~19 words/s, <span class="badge m">measured</span></td></tr>
+          <tr><th scope="row">Price</th><td>Free personal, $9 a person a month for business</td></tr>
+          <tr><th scope="row">Market</th><td>2025 TAM $8.65B, SAM $42.8M<sup class="fn">[<a href="#src-1">1</a>, <a href="#src-2">2</a>]</sup></td></tr>
+          <tr><th scope="row">Company</th><td>Not yet registered, 100% founder-owned</td></tr>
+          <tr><th scope="row">Contact</th><td><a href="mailto:locallabs.io@gmail.com">locallabs.io@gmail.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="howto"><b>How to read this page.</b> <span class="badge m">measured</span> numbers are our own tests on real laptops. <span class="badge e">estimate</span> numbers are calculated; each section shows how, with a worked example in <a href="#method">Appendix C</a>. Outside numbers carry a footnote [n] to <a href="#sources">Appendix E</a>. Money is in US dollars, at October 2026 prices. Last updated: 24 October 2026.</p>
+</section>
+
+<!-- 2 -->
+<section id="problem" class="sec">
+  <h2><span class="n">2.</span> Problem</h2>
+  <p>People want AI, but:</p>
+  <ol class="points">
+    <li><b>Data can't leave the country.</b> Banks, clinics and offices can't send personal data to foreign clouds. Uzbekistan's personal-data law (amended by Law ZRU-666, in force 15 April 2021) requires citizens' data to be kept on servers inside the country.<sup class="fn">[<a href="#src-3">3</a>]</sup> Nearly 60% of AI leaders cite cross-border data rules as a major challenge (NTT DATA, May 2026).<sup class="fn">[<a href="#src-4">4</a>]</sup></li>
+    <li><b>Cloud AI is expensive.</b> $20–30 per person every month: ChatGPT Business<sup class="fn">[<a href="#src-5">5</a>]</sup> and Claude Team<sup class="fn">[<a href="#src-6">6</a>]</sup> cost $20 billed yearly, and Microsoft 365 Copilot costs $18–30 on top of a Microsoft 365 licence.<sup class="fn">[<a href="#src-7">7</a>]</sup></li>
+    <li><b>Local AI is for experts.</b> Free tools exist, but people must know which model their computer can run and how to set it up.</li>
+  </ol>
+  <p class="result">So people risk their data, overpay, or go without AI.</p>
+</section>
+
+<!-- 3 -->
+<section id="product" class="sec">
+  <h2><span class="n">3.</span> Product</h2>
+  <p>One app. Private AI on the computer you have. <b>Runs on any mid-range computer:</b> it checks the machine and picks the model that runs well on it. <b>Private and offline:</b> nothing you type leaves the computer, and no account is needed. <b>From laptop to company server:</b> free for people; companies run it on their own server.</p>
+  <div class="wide scroll">
+    <table class="tbl two-col" id="product-table">
+      <caption class="sr">What works today and what comes next</caption>
+      <thead><tr><th scope="col">Works today (public preview)</th><th scope="col">Coming next (date)</th></tr></thead>
+      <tbody><tr>
+        <td><ul>
+          <li>chat with open models from several makers (Qwen3.5, Gemma 4, Ministral), from 0.8B to 9B, chosen to fit the computer;</li>
+          <li>automatic model choice for the computer;</li>
+          <li>attaching pictures and screenshots;</li>
+          <li>English, Russian and Uzbek;</li>
+          <li>any graphics card (NVIDIA, AMD or Intel, through Vulkan) or none;</li>
+          <li>chats kept when updating.</li>
+        </ul></td>
+        <td><dl class="plan">
+          <dt>0.2.0, November 2026</dt><dd>text-file attachments.</dd>
+          <dt>0.2.1</dt><dd>context compacting for long chats; PDF and Word files; full app translation; bring your own model: any open GGUF model from Hugging Face, up to 122B on big machines; a new design with three colour themes; a CUDA edition for NVIDIA, if the licence review is cleared.</dd>
+          <dt>2027</dt><dd>the AI agent that works with your files and tools offline; an SDK so companies and the community can add their own tools (community tools are reviewed before they enter the catalog); the company server edition.</dd>
+        </dl></td>
+      </tr></tbody>
+    </table>
+  </div>
+  <p>Our focus: <b>AI agents where everything stays with you.</b> One engine, easy to extend with your own tools, the way people use cloud assistants today, but local.</p>
+</section>
+
+<!-- 4 -->
+<section id="traction" class="sec">
+  <h2><span class="n">4.</span> Traction and proof</h2>
+  <div class="wide scroll">
+    <table class="tbl" id="metrics">
+      <caption>Metrics</caption>
+      <thead><tr><th scope="col" class="stick">Metric</th><th scope="col">Value</th><th scope="col">Date</th><th scope="col">Type</th><th scope="col">Source</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" class="stick">Public preview v0.2.0-preview.1</th><td>Live, free to download</td><td>October 2026</td><td><span class="badge m">measured</span></td><td>Product site<sup class="fn">[<a href="#src-8">8</a>]</sup></td></tr>
+        <tr><th scope="row" class="stick">Testers on their own laptops (Test A)</th><td class="num">10+</td><td>22 September 2026</td><td><span class="badge m">measured</span></td><td>Our records</td></tr>
+        <tr><th scope="row" class="stick">Speed, Qwen3.5 4B, 4 GB laptop card (RTX 3050 Ti)</th><td class="num">~19 words/s <small>(25.1–25.6 tokens/s)</small></td><td>24 October 2026</td><td><span class="badge m">measured</span></td><td>Our measurement</td></tr>
+        <tr><th scope="row" class="stick">Speed, Qwen3.5 9B, same laptop</th><td class="num">~7 words/s <small>(about 9 tokens/s)</small></td><td>October 2026</td><td><span class="badge m">measured</span></td><td>Our measurement</td></tr>
+        <tr><th scope="row" class="stick">Speed, Qwen3.5 4B, no graphics card, 8 GB</th><td class="num">~5 words/s <small>(6–7 tokens/s)</small></td><td>20 October 2026</td><td><span class="badge m">measured</span></td><td>Our measurement</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <dl class="dated">
+    <div><dt>22 September 2026</dt><dd><b>Test A.</b> 10+ people used the first version on their own gaming laptops. All their feedback was about chat basics (stop button, several chats at once, dark mode, attachments, maths symbols). Fixes went into 0.2.</dd></div>
+    <div><dt>24 October 2026</dt><dd><b>Our 4 GB test laptop (RTX 3050 Ti).</b> Qwen3.5 4B read a photo of a handwritten integral and solved it correctly in English, Russian and Uzbek. It read the picture in about 17–18 seconds, then wrote at 25.1, 25.2 and 25.6 tokens a second (about 19 words a second). The Uzbek answer used one wrong term; we show it unedited on our site.<sup class="fn">[<a href="#src-8">8</a>]</sup></dd></div>
+    <div><dt>20 October 2026</dt><dd><b>No graphics card.</b> A Core i7 laptop with Intel Iris Xe and 8 GB of memory ran Qwen3.5 4B at 6–7 tokens a second (about 5 words a second) with a browser and VS Code open.</dd></div>
+    <div><dt>October 2026</dt><dd><b>Public preview.</b> v0.2.0-preview.1 is public, with a download counter and a Telegram community.<sup class="fn">[<a href="#src-9">9</a>]</sup></dd></div>
+  </dl>
+  <div class="note-box">
+    <p class="nb-title">How we got this</p>
+    <p>AI models count text in <dfn>tokens</dfn>. One token is about three quarters of an English word, so 25 tokens a second is about 19 words a second. Uzbek and Russian words use more tokens than English words, so in those languages the words-a-second figure is a little lower. Speeds were measured with Qwen3.5 4B, October 2026. <a href="#m-tokens">Appendix C: words and tokens</a>.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="advantage" class="sec">
+  <h2><span class="n">5.</span> Competitive position</h2>
+  <div class="wide scroll">
+    <table class="tbl compare">
+      <caption class="sr">localSpace compared with Ollama, LM Studio and ChatGPT / Claude</caption>
+      <thead><tr><th scope="col" class="stick"><span class="sr">Feature</span></th><th scope="col">localSpace</th><th scope="col">Ollama</th><th scope="col">LM Studio</th><th scope="col">ChatGPT / Claude</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" class="stick">Everything stays on your computer</th><td><svg class="mark yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" class="fill"/><path d="M8 12.5l2.7 2.7L16 9.8" class="on-fill"/></svg><span class="sr">yes</span></td><td><svg class="mark yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" class="fill"/><path d="M8 12.5l2.7 2.7L16 9.8" class="on-fill"/></svg><span class="sr">yes</span></td><td><svg class="mark yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" class="fill"/><path d="M8 12.5l2.7 2.7L16 9.8" class="on-fill"/></svg><span class="sr">yes</span></td><td><svg class="mark no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg><span class="sr">no</span></td></tr>
+        <tr><th scope="row" class="stick">Easy for anyone: picks the right AI for your computer</th><td><svg class="mark yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" class="fill"/><path d="M8 12.5l2.7 2.7L16 9.8" class="on-fill"/></svg><span class="sr">yes</span></td><td><svg class="mark no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg><span class="sr">no</span></td><td><svg class="mark part" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" class="fill"/></svg><span class="sr">partly</span></td><td><svg class="mark yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" class="fill"/><path d="M8 12.5l2.7 2.7L16 9.8" class="on-fill"/></svg><span class="sr">yes</span></td></tr>
+        <tr><th scope="row" class="stick">AI agent that does tasks with your files, offline</th><td><svg class="mark yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" class="fill"/><path d="M8 12.5l2.7 2.7L16 9.8" class="on-fill"/></svg><span class="sr">yes, in development</span><a class="star" href="#adv-note" aria-hidden="true" tabindex="-1">*</a></td><td><svg class="mark no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg><span class="sr">no</span></td><td><svg class="mark part" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" class="fill"/></svg><span class="sr">partly</span></td><td><svg class="mark no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg><span class="sr">no</span></td></tr>
+        <tr><th scope="row" class="stick">Easy to add your own tools</th><td><svg class="mark yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" class="fill"/><path d="M8 12.5l2.7 2.7L16 9.8" class="on-fill"/></svg><span class="sr">yes, in development</span><a class="star" href="#adv-note" aria-hidden="true" tabindex="-1">*</a></td><td><svg class="mark no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg><span class="sr">no</span></td><td><svg class="mark part" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" class="fill"/></svg><span class="sr">partly</span></td><td><svg class="mark part" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" class="fill"/></svg><span class="sr">partly</span></td></tr>
+        <tr><th scope="row" class="stick">Company server, installed and supported for you</th><td><svg class="mark yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" class="fill"/><path d="M8 12.5l2.7 2.7L16 9.8" class="on-fill"/></svg><span class="sr">yes, in development</span><a class="star" href="#adv-note" aria-hidden="true" tabindex="-1">*</a></td><td><svg class="mark part" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" class="fill"/></svg><span class="sr">partly</span></td><td><svg class="mark no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg><span class="sr">no</span></td><td><svg class="mark no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg><span class="sr">no</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small legend"><span><svg class="mark yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" class="fill"/><path d="M8 12.5l2.7 2.7L16 9.8" class="on-fill"/></svg><span class="sr">yes</span> yes</span> <span><svg class="mark part" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" class="fill"/></svg><span class="sr">partly</span> partly (with extra setup)</span> <span><svg class="mark no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg><span class="sr">no</span> no</span></p>
+  <p class="small" id="adv-note">* In development; planned for 2027. The public preview has chat, pictures and model choice.</p>
+</section>
+
+<!-- 6 -->
+<section id="market" class="sec">
+  <h2><span class="n">6.</span> Market</h2>
+  <ul class="defs">
+    <li><b>TAM</b> (total addressable market): the global market.</li>
+    <li><b>SAM</b> (serviceable available market): Central Asia.</li>
+    <li><b>SOM</b> (serviceable obtainable market): Uzbekistan, what we plan to win.</li>
+  </ul>
+  <h3>2025 base, the same in every case</h3>
+  <div class="figures" id="base-2025">
+    <div data-metric="tam" data-v="8.65"><p class="fig">$8.65B</p><p>TAM: company spending on language-model AI worldwide.<sup class="fn">[<a href="#src-1">1</a>]</sup> Of this, the part run on companies' own servers was $1.55B.</p></div>
+    <div data-metric="sam" data-v="42.8"><p class="fig">$42.8M</p><p>SAM: Central Asia's share, 0.495% of the world economy.<sup class="fn">[<a href="#src-2">2</a>, <a href="#src-10">10</a>]</sup></p></div>
+    <div data-metric="som" data-v="0"><p class="fig">$0</p><p>SOM: no revenue yet; our first paid seats are planned for 2027.</p></div>
+  </div>
+  <h3>Growth after 2025, each rate from a published report</h3>
+  <ul>
+    <li><b>Min, 13.5% a year:</b> GMI Insights, enterprise LLM market.<sup class="fn">[<a href="#src-1">1</a>]</sup></li>
+    <li><b>Mid, 20.2% a year:</b> Market.us, sovereign (in-country) AI market.<sup class="fn">[<a href="#src-11">11</a>]</sup></li>
+    <li><b>Max, 28.3% a year:</b> Research and Markets, enterprise LLM market.<sup class="fn">[<a href="#src-12">12</a>]</sup></li>
+  </ul>
+  <div class="controls js-only" role="group" aria-label="Case for 2026–2030">
+    <span class="small">Case for 2026–2030:</span>
+    <button type="button" data-scn="min" aria-pressed="false">Min</button>
+    <button type="button" data-scn="mid" aria-pressed="true">Mid</button>
+    <button type="button" data-scn="max" aria-pressed="false">Max</button>
+  </div>
+  <figure class="chart wide js-only" id="chart-market">
+    <figcaption><b>TAM and SAM, 2025–2030, three cases.</b> <span data-out="readout"></span></figcaption>
+    <div class="plots"><div class="plot" data-plot="tam"></div><div class="plot" data-plot="sam"></div></div>
+    <p class="src">Source: GMI Insights<sup class="fn">[<a href="#src-1">1</a>]</sup>, Market.us<sup class="fn">[<a href="#src-11">11</a>]</sup>, Research and Markets<sup class="fn">[<a href="#src-12">12</a>]</sup>, IMF<sup class="fn">[<a href="#src-2">2</a>]</sup>; our calculation. Dashed lines: min and max; solid: the chosen case.</p>
+  </figure>
+  <div class="wide scroll">
+<table class="tbl" id="market-table">
+<caption>TAM and SAM by case, 2025–2030</caption>
+<thead><tr><th scope="col" rowspan="2" class="stick">Year</th><th scope="colgroup" colspan="3" class="grp">TAM (USD billions)</th><th scope="colgroup" colspan="3" class="grp">SAM (USD millions)</th></tr>
+<tr><th scope="col" class="num c-min">Min</th><th scope="col" class="num c-mid">Mid</th><th scope="col" class="num c-max">Max</th><th scope="col" class="num c-min">Min</th><th scope="col" class="num c-mid">Mid</th><th scope="col" class="num c-max">Max</th></tr></thead>
+<tbody>
+<tr data-year="2025"><th scope="row" class="stick">2025</th><td class="num c-min" data-metric="tam" data-scn="min" data-v="8.65">8.65</td><td class="num c-mid" data-metric="tam" data-scn="mid" data-v="8.65">8.65</td><td class="num c-max" data-metric="tam" data-scn="max" data-v="8.65">8.65</td><td class="num c-min" data-metric="sam" data-scn="min" data-v="42.8">42.8</td><td class="num c-mid" data-metric="sam" data-scn="mid" data-v="42.8">42.8</td><td class="num c-max" data-metric="sam" data-scn="max" data-v="42.8">42.8</td></tr>
+<tr data-year="2026"><th scope="row" class="stick">2026</th><td class="num c-min" data-metric="tam" data-scn="min" data-v="9.82">9.82</td><td class="num c-mid" data-metric="tam" data-scn="mid" data-v="10.4">10.40</td><td class="num c-max" data-metric="tam" data-scn="max" data-v="11.1">11.10</td><td class="num c-min" data-metric="sam" data-scn="min" data-v="48.6">48.6</td><td class="num c-mid" data-metric="sam" data-scn="mid" data-v="51.5">51.5</td><td class="num c-max" data-metric="sam" data-scn="max" data-v="54.9">54.9</td></tr>
+<tr data-year="2027"><th scope="row" class="stick">2027</th><td class="num c-min" data-metric="tam" data-scn="min" data-v="11.14">11.14</td><td class="num c-mid" data-metric="tam" data-scn="mid" data-v="12.5">12.50</td><td class="num c-max" data-metric="tam" data-scn="max" data-v="14.24">14.24</td><td class="num c-min" data-metric="sam" data-scn="min" data-v="55.1">55.1</td><td class="num c-mid" data-metric="sam" data-scn="mid" data-v="61.9">61.9</td><td class="num c-max" data-metric="sam" data-scn="max" data-v="70.5">70.5</td></tr>
+<tr data-year="2028"><th scope="row" class="stick">2028</th><td class="num c-min" data-metric="tam" data-scn="min" data-v="12.65">12.65</td><td class="num c-mid" data-metric="tam" data-scn="mid" data-v="15.02">15.02</td><td class="num c-max" data-metric="tam" data-scn="max" data-v="18.27">18.27</td><td class="num c-min" data-metric="sam" data-scn="min" data-v="62.6">62.6</td><td class="num c-mid" data-metric="sam" data-scn="mid" data-v="74.3">74.3</td><td class="num c-max" data-metric="sam" data-scn="max" data-v="90.4">90.4</td></tr>
+<tr data-year="2029"><th scope="row" class="stick">2029</th><td class="num c-min" data-metric="tam" data-scn="min" data-v="14.35">14.35</td><td class="num c-mid" data-metric="tam" data-scn="mid" data-v="18.06">18.06</td><td class="num c-max" data-metric="tam" data-scn="max" data-v="23.44">23.44</td><td class="num c-min" data-metric="sam" data-scn="min" data-v="71">71.0</td><td class="num c-mid" data-metric="sam" data-scn="mid" data-v="89.4">89.4</td><td class="num c-max" data-metric="sam" data-scn="max" data-v="116">116.0</td></tr>
+<tr data-year="2030"><th scope="row" class="stick">2030</th><td class="num c-min" data-metric="tam" data-scn="min" data-v="16.29">16.29</td><td class="num c-mid" data-metric="tam" data-scn="mid" data-v="21.7">21.70</td><td class="num c-max" data-metric="tam" data-scn="max" data-v="30.07">30.07</td><td class="num c-min" data-metric="sam" data-scn="min" data-v="80.6">80.6</td><td class="num c-mid" data-metric="sam" data-scn="mid" data-v="107.4">107.4</td><td class="num c-max" data-metric="sam" data-scn="max" data-v="148.8">148.8</td></tr>
+</tbody>
+</table>
+  </div>
+  <h3>SOM: Uzbekistan, our own bottom-up plan <span class="badge e">estimate</span></h3>
+  <p>Paid seats × $9 a month × 12 = $108 a year per seat. 2025 and 2026 are actual: no revenue.</p>
+  <div class="wide scroll">
+<table class="tbl" id="som-table">
+<caption class="sr">SOM: paid seats and revenue in Uzbekistan</caption>
+<thead><tr><th scope="col" class="stick">Year</th><th scope="col" class="num">Min seats</th><th scope="col" class="num">Min revenue (USD)</th><th scope="col" class="num">Mid seats</th><th scope="col" class="num">Mid revenue (USD)</th><th scope="col" class="num">Max seats</th><th scope="col" class="num">Max revenue (USD)</th></tr></thead>
+<tbody>
+<tr data-year="2025"><th scope="row" class="stick">2025</th><td class="num" data-scn="min" data-seats="0">0</td><td class="num" data-scn="min" data-rev="0">0</td><td class="num" data-scn="mid" data-seats="0">0</td><td class="num" data-scn="mid" data-rev="0">0</td><td class="num" data-scn="max" data-seats="0">0</td><td class="num" data-scn="max" data-rev="0">0</td></tr>
+<tr data-year="2026"><th scope="row" class="stick">2026</th><td class="num" data-scn="min" data-seats="0">0</td><td class="num" data-scn="min" data-rev="0">0</td><td class="num" data-scn="mid" data-seats="0">0</td><td class="num" data-scn="mid" data-rev="0">0</td><td class="num" data-scn="max" data-seats="0">0</td><td class="num" data-scn="max" data-rev="0">0</td></tr>
+<tr data-year="2027"><th scope="row" class="stick">2027</th><td class="num" data-scn="min" data-seats="60">60</td><td class="num" data-scn="min" data-rev="6480">6,480</td><td class="num" data-scn="mid" data-seats="300">300</td><td class="num" data-scn="mid" data-rev="32400">32,400</td><td class="num" data-scn="max" data-seats="800">800</td><td class="num" data-scn="max" data-rev="86400">86,400</td></tr>
+<tr data-year="2028"><th scope="row" class="stick">2028</th><td class="num" data-scn="min" data-seats="400">400</td><td class="num" data-scn="min" data-rev="43200">43,200</td><td class="num" data-scn="mid" data-seats="2000">2,000</td><td class="num" data-scn="mid" data-rev="216000">216,000</td><td class="num" data-scn="max" data-seats="5000">5,000</td><td class="num" data-scn="max" data-rev="540000">540,000</td></tr>
+<tr data-year="2029"><th scope="row" class="stick">2029</th><td class="num" data-scn="min" data-seats="1000">1,000</td><td class="num" data-scn="min" data-rev="108000">108,000</td><td class="num" data-scn="mid" data-seats="5900">5,900</td><td class="num" data-scn="mid" data-rev="637200">637,200</td><td class="num" data-scn="max" data-seats="12000">12,000</td><td class="num" data-scn="max" data-rev="1296000">1,296,000</td></tr>
+<tr data-year="2030"><th scope="row" class="stick">2030</th><td class="num" data-scn="min" data-seats="2000">2,000</td><td class="num" data-scn="min" data-rev="216000">216,000</td><td class="num" data-scn="mid" data-seats="9000">9,000</td><td class="num" data-scn="mid" data-rev="972000">972,000</td><td class="num" data-scn="max" data-seats="20000">20,000</td><td class="num" data-scn="max" data-rev="2160000">2,160,000</td></tr>
+</tbody>
+</table>
+  </div>
+  <p><b>Where the mid 2029 seats come from (5,900):</b></p>
+  <ul>
+    <li>3 of Uzbekistan's 34 banks<sup class="fn">[<a href="#src-13">13</a>]</sup> × about 300 seats = 900;</li>
+    <li>10 of 215 universities<sup class="fn">[<a href="#src-14">14</a>]</sup> × about 200 staff = 2,000;</li>
+    <li>50 of 9,000+ private clinics<sup class="fn">[<a href="#src-15">15</a>]</sup> × about 20 = 1,000;</li>
+    <li>100 other companies × about 20 = 2,000.</li>
+  </ul>
+  <p>In 2030 the SOM is a small slice of the SAM: 0.3% in the min case, 0.9% in mid, 1.5% in max. Turkmenistan's GDP figure differs between sources ($77.4B or $49.8B). With the lower one, the 2025 SAM would be $41.7M.</p>
+  <div class="note-box">
+    <p class="nb-title">How we got this</p>
+    <p>TAM after 2025 = $8.65B × (1 + growth) to the power of the years after 2025. Example, mid 2030: $8.65B × 1.202<sup>5</sup> = $21.70B. SAM = TAM × 0.495%, Central Asia's share of the world economy: $570.6B out of $115.3T (IMF, 2025). Example, 2025: $8.65B × 0.495% = $42.8M. SOM = paid seats × $108 a year. <a href="#m-market">Appendix C: market</a>.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="model" class="sec">
+  <h2><span class="n">7.</span> Business model and unit economics</h2>
+  <div class="wide scroll">
+    <table class="tbl two-col" id="plans">
+      <caption class="sr">Personal and Business plans</caption>
+      <thead><tr><th scope="col">Personal: Free</th><th scope="col">Business: $9 a person a month, billed yearly</th></tr></thead>
+      <tbody><tr>
+        <td><ul>
+          <li>One person, one computer.</li>
+          <li>Chat, pictures and files.</li>
+          <li>Help from the community.</li>
+          <li>Open source (Apache 2.0).</li>
+        </ul></td>
+        <td><ul>
+          <li>One company server for everyone, so employees don't need strong laptops.</li>
+          <li>Company sign-in and admin.</li>
+          <li>Shared company documents with access rules.</li>
+          <li>Set up and supported by us.</li>
+          <li>Every company starts with a free 30-day trial.</li>
+        </ul></td>
+      </tr></tbody>
+    </table>
+  </div>
+  <p class="result">Free runs on one computer. Business gives the whole company one AI server.</p>
+  <h3>What it saves a company: a team of 24 <span class="badge e">estimate</span></h3>
+  <div class="wide scroll">
+    <table class="tbl" id="savings">
+      <caption class="sr">Cloud AI and localSpace costs for a team of 24</caption>
+      <thead><tr><th scope="col" class="stick"></th><th scope="col" class="num">Cloud AI (USD)</th><th scope="col" class="num">localSpace (USD)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" class="stick">Software, per year</th><td class="num">$20 × 24 × 12 = $5,760</td><td class="num">$9 × 24 × 12 = $2,592</td></tr>
+        <tr><th scope="row" class="stick">Hardware, per year <small>(the company's own machine, paid once to a shop, not to us)</small></th><td class="num">none</td><td class="num">$1,850 ÷ 3 years = $617</td></tr>
+      </tbody>
+      <tfoot>
+        <tr class="total"><th scope="row" class="stick">Total per year</th><td class="num" data-cloud-year="5760">$5,760</td><td class="num" data-ls-year="3209">$3,209</td></tr>
+        <tr><th scope="row" class="stick">Over 3 years</th><td class="num" data-cloud-3y="17280">$17,280</td><td class="num" data-ls-3y="9626">$9,626</td></tr>
+      </tfoot>
+    </table>
+  </div>
+  <p>The company saves about <b>$2,550 a year (44%)</b> and its data never leaves the building. The $1,850 is the middle of the October 2026 price range of the default office desktop ($1,700–2,000)<sup class="fn">[<a href="#src-16">16</a>]</sup>; cloud AI is $20 a person a month, billed yearly.<sup class="fn">[<a href="#src-5">5</a>, <a href="#src-6">6</a>]</sup></p>
+  <h3>Why $9</h3>
+  <ul>
+    <li>It's less than half of cloud AI ($20 a person a month billed yearly).</li>
+    <li>We don't pay for every message: the AI runs on the customer's own hardware. Our costs are building, updating and supporting the software, not running models.</li>
+    <li>Hardware is the customer's own, or bought once. <a href="#hardware">Appendix A</a> shows a team of about 18–30 served by a ~$2,000 desktop.</li>
+    <li>Personal use stays free; that's how people find us and how companies first try us.</li>
+  </ul>
+  <div class="note-box">
+    <p class="nb-title">How we got this</p>
+    <p>Software = price × people × 12 months. Hardware = the machine's price spread over 3 years. Example, localSpace: $9 × 24 × 12 = $2,592, plus $1,850 ÷ 3 = $617, so $3,209 a year against $5,760 for cloud AI. <a href="#m-savings">Appendix C: what it saves a company</a>.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="projections" class="sec">
+  <h2><span class="n">8.</span> Projections</h2>
+  <p class="label-line"><span class="badge e">estimate</span> Projection, Uzbekistan only, not a forecast of other markets.</p>
+  <div class="wide scroll">
+<table class="tbl" id="rev-table">
+<caption>Revenue per year, Uzbekistan only (USD)</caption>
+<thead><tr><th scope="col" class="stick">Year</th><th scope="col" class="num c-min">Min</th><th scope="col" class="num c-mid">Mid</th><th scope="col" class="num c-max">Max</th></tr></thead>
+<tbody>
+<tr data-year="2025"><th scope="row" class="stick">2025</th><td class="num c-min" data-scn="min" data-rev="0">0</td><td class="num c-mid" data-scn="mid" data-rev="0">0</td><td class="num c-max" data-scn="max" data-rev="0">0</td></tr>
+<tr data-year="2026"><th scope="row" class="stick">2026</th><td class="num c-min" data-scn="min" data-rev="0">0</td><td class="num c-mid" data-scn="mid" data-rev="0">0</td><td class="num c-max" data-scn="max" data-rev="0">0</td></tr>
+<tr data-year="2027"><th scope="row" class="stick">2027</th><td class="num c-min" data-scn="min" data-rev="6480">6,480</td><td class="num c-mid" data-scn="mid" data-rev="32400">32,400</td><td class="num c-max" data-scn="max" data-rev="86400">86,400</td></tr>
+<tr data-year="2028"><th scope="row" class="stick">2028</th><td class="num c-min" data-scn="min" data-rev="43200">43,200</td><td class="num c-mid" data-scn="mid" data-rev="216000">216,000</td><td class="num c-max" data-scn="max" data-rev="540000">540,000</td></tr>
+<tr data-year="2029"><th scope="row" class="stick">2029</th><td class="num c-min" data-scn="min" data-rev="108000">108,000</td><td class="num c-mid" data-scn="mid" data-rev="637200">637,200</td><td class="num c-max" data-scn="max" data-rev="1296000">1,296,000</td></tr>
+<tr data-year="2030"><th scope="row" class="stick">2030</th><td class="num c-min" data-scn="min" data-rev="216000">216,000</td><td class="num c-mid" data-scn="mid" data-rev="972000">972,000</td><td class="num c-max" data-scn="max" data-rev="2160000">2,160,000</td></tr>
+</tbody>
+</table>
+  </div>
+  <figure class="chart js-only" id="chart-rev">
+    <figcaption><b>Revenue per year, 2025–2030, USD.</b></figcaption>
+    <div class="plot"></div>
+    <p class="src">Source: our seat plan × $108 a year per seat (section 6).</p>
+  </figure>
+  <dl class="dated">
+    <div><dt>2026</dt><dd>public preview and release 0.2.0; no revenue.</dd></div>
+    <div><dt>2027</dt><dd>first 3 paying companies (about 300 seats); the agent and tools SDK.</dd></div>
+    <div><dt>2028</dt><dd>about 2,000 seats; company server edition generally available.</dd></div>
+    <div><dt>2029</dt><dd>about 5,900 seats; $637,200 a year.</dd></div>
+    <div><dt>2030</dt><dd>about 9,000 seats; $972,000 a year. Min $216,000, max $2.16M.</dd></div>
+  </dl>
+  <p>The projections cover Uzbekistan only. Other Central Asian countries would be upside, not counted here.</p>
+  <div class="note-box">
+    <p class="nb-title">How we got this</p>
+    <p>Revenue = paid seats × $108 a year. Example, mid 2029: 5,900 × $108 = $637,200. The min plan has about one sixth of the mid seats, for slow sales. The max plan has about twice the mid seats, for faster sales. <a href="#m-market">Appendix C: market</a>.</p>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="funds" class="sec">
+  <h2><span class="n">9.</span> Use of funds</h2>
+  <p>Raising <b>$25,000</b>, pre-seed, 12 months. Goal: our first 3 paying companies. In priority order:</p>
+<div class="stack" aria-hidden="true"><span style="flex-basis:10%" title="1. App signing and company setup: $2,500">1</span><span style="flex-basis:12%" title="2. AI coding tools: $3,000">2</span><span style="flex-basis:20%" title="3. Server and test hardware: $5,000">3</span><span style="flex-basis:20%" title="4. Marketing: $5,000">4</span><span style="flex-basis:24%" title="5. GPU rent: fine-tuning: $6,000">5</span><span style="flex-basis:6%" title="6. Pilots: install and support: $1,500">6</span><span style="flex-basis:8%" title="7. Reserve: $2,000">7</span></div>
+  <div class="wide scroll">
+<table class="tbl" id="funds-table">
+<caption class="sr">Use of funds, in priority order</caption>
+<thead><tr><th scope="col" class="num">Priority</th><th scope="col" class="stick">Line</th><th scope="col" class="num">Amount (USD)</th><th scope="col" class="num">% of total</th><th scope="col">What it pays for</th></tr></thead>
+<tbody>
+<tr data-rank="1" data-usd="2500"><td class="num">1</td><th scope="row" class="stick">App signing and company setup</th><td class="num">2,500</td><td class="num" data-pct="10">10%</td><td>Register the company; a Windows code-signing certificate (about $300–500 a year<sup class="fn">[<a href="#src-17">17</a>]</sup>; Microsoft's own Artifact Signing isn't open to Uzbekistan<sup class="fn">[<a href="#src-18">18</a>]</sup>) so Windows trusts the installer<sup class="fn">[<a href="#src-19">19</a>]</sup>; simple pilot contracts</td></tr>
+<tr data-rank="2" data-usd="3000"><td class="num">2</td><th scope="row" class="stick">AI coding tools</th><td class="num">3,000</td><td class="num" data-pct="12">12%</td><td>A $200-a-month coding assistant<sup class="fn">[<a href="#src-20">20</a>]</sup>, GitHub, the domain</td></tr>
+<tr data-rank="3" data-usd="5000"><td class="num">3</td><th scope="row" class="stick">Server and test hardware</th><td class="num">5,000</td><td class="num" data-pct="20">20%</td><td>A server we bring to company pilots, plus laptops with 4, 6 and 8 GB cards and an AMD machine, to prove what runs where</td></tr>
+<tr data-rank="4" data-usd="5000"><td class="num">4</td><th scope="row" class="stick">Marketing</th><td class="num">5,000</td><td class="num" data-pct="20">20%</td><td>Telegram, university demos, events, videos</td></tr>
+<tr data-rank="5" data-usd="6000"><td class="num">5</td><th scope="row" class="stick"><a href="#gpu">GPU rent: fine–tuning</a></th><td class="num">6,000</td><td class="num" data-pct="24">24%</td><td>About 1,200 H100 hours at $3–5 an hour<sup class="fn">[<a href="#src-21">21</a>]</sup> to make small models better and smaller, so localSpace needs less hardware (<a href="#gpu">Appendix B</a>)</td></tr>
+<tr data-rank="6" data-usd="1500"><td class="num">6</td><th scope="row" class="stick">Pilots: install and support</th><td class="num">1,500</td><td class="num" data-pct="6">6%</td><td>Installing on site, travel and support for 3 companies</td></tr>
+<tr data-rank="7" data-usd="2000"><td class="num">7</td><th scope="row" class="stick">Reserve</th><td class="num">2,000</td><td class="num" data-pct="8">8%</td><td>About 10% for price and exchange-rate changes</td></tr>
+</tbody>
+<tfoot><tr class="total"><td></td><th scope="row" class="stick">Total</th><td class="num" data-total="25000">25,000</td><td class="num">100%</td><td></td></tr></tfoot>
+</table>
+  </div>
+  <p>Or help with: 3 trial companies · 2 universities · GPU time · mentors.</p>
+  <h3>What your investment does</h3>
+  <p><b>In 12 months, $25,000 turns a working preview into a business with paying customers.</b></p>
+  <div class="wide scroll">
+    <table class="tbl" id="milestones">
+      <caption class="sr">Milestones and the lines that pay for them</caption>
+      <thead><tr><th scope="col" class="stick">Milestone</th><th scope="col">Paid by</th><th scope="col">When</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" class="stick">Company registered; installer signed, so Windows trusts it</th><td>App signing and company setup</td><td>First month</td></tr>
+        <tr><th scope="row" class="stick">Release 0.2.0 (text files), then 0.2.1 (PDF and Word, long-chat memory, any open model)</th><td>AI coding tools</td><td>November 2026, then early 2027</td></tr>
+        <tr><th scope="row" class="stick">Proof of what runs where, on real machines from 4 GB laptops to company servers</th><td>Server and test hardware</td><td>First quarter</td></tr>
+        <tr><th scope="row" class="stick">Smaller, better models: good Uzbek and reliable agent tools on cheaper hardware</th><td>GPU rent: fine-tuning</td><td>Within 12 months</td></tr>
+        <tr><th scope="row" class="stick">More users, and companies that know us</th><td>Marketing</td><td>All year</td></tr>
+        <tr><th scope="row" class="stick">First 3 paying companies, about 300 seats ($32,400 a year, mid case)</th><td>Pilots: install and support</td><td>2027</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Why it matters to an investor:</b></p>
+  <ul>
+    <li><b>A real product already exists.</b> It's a public preview anyone can download today and test against these claims.</li>
+    <li><b>Low running costs.</b> We don't pay for every message the AI writes: it runs on the customer's own hardware. So our costs are building, updating and supporting the software, not running models, and that cost doesn't grow with every question a customer asks.</li>
+    <li><b>A clear reason to buy.</b> For a team of 24, localSpace costs about 44% less than cloud AI per year, and the data stays inside the company (<a href="#m-savings">worked example in Appendix C</a>).</li>
+    <li><b>A market that's growing.</b> Company spending on language-model AI grows 13.5–28.3% a year in the reports we use.<sup class="fn">[<a href="#src-1">1</a>, <a href="#src-11">11</a>, <a href="#src-12">12</a>]</sup></li>
+    <li><b>Upside beyond our plan.</b> Our projections count Uzbekistan only. The other four Central Asian countries are about three times Uzbekistan's economy combined, and they aren't in the numbers.<sup class="fn">[<a href="#src-2">2</a>]</sup></li>
+    <li><b>Terms:</b> we're open to standard pre-seed terms and would like to discuss them directly. We don't name a valuation on this page.</li>
+  </ul>
+  <div class="note-box">
+    <p class="nb-title">How we got this</p>
+    <p>Each line is priced from October 2026 prices: a $200-a-month coding assistant<sup class="fn">[<a href="#src-20">20</a>]</sup>, a code-signing certificate at about $300–500 a year<sup class="fn">[<a href="#src-17">17</a>, <a href="#src-19">19</a>, <a href="#src-18">18</a>]</sup>, and H100 rent at $3–5 an hour<sup class="fn">[<a href="#src-21">21</a>]</sup>. The GPU line is worked out in <a href="#gpu">Appendix B</a>. "% of total" = line ÷ $25,000.</p>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="team" class="sec">
+  <h2><span class="n">10.</span> Team</h2>
+  <div class="person">
+    <img class="photo" src="assets/img/founder.png" alt="Abdulloh Shavkatjonov" width="112" height="112" loading="lazy">
+    <div>
+      <p class="name">Abdulloh Shavkatjonov</p>
+      <p class="role">Founder. Builds localSpace end to end.</p>
+      <ul class="creds">
+        <li><img src="assets/img/newuu.png" alt="New Uzbekistan University" width="464" height="266" loading="lazy"><span>New Uzbekistan University: AI &amp; Robotics · 2nd year · 2025–2029</span></li>
+        <li><img src="assets/img/gamedevhq.png" alt="GameDevHQ" width="900" height="120" loading="lazy"><span>GameDevHQ: Professional Game Developer · Completed</span></li>
+        <li><img src="assets/img/mlzoomcamp-short.png" alt="ML Zoomcamp" width="560" height="236" loading="lazy"><span>ML Zoomcamp: taking the course</span></li>
+      </ul>
+    </div>
+  </div>
+  <p>Looking for: mentors, and later a first engineer and a sales lead.</p>
+</section>
+
+<!-- 11 -->
+<section id="company" class="sec">
+  <h2><span class="n">11.</span> Company, legal and risks</h2>
+  <div class="wide scroll">
+    <table class="tbl" id="company-table">
+      <caption class="sr">Company status</caption>
+      <tbody>
+        <tr><th scope="row" class="stick">Company</th><td>Not registered yet. Registering is the first item in the use of funds.</td></tr>
+        <tr><th scope="row" class="stick">Ownership</th><td>100% founder.</td></tr>
+        <tr><th scope="row" class="stick">Licence</th><td>Apache 2.0 for the personal desktop app and the SDK. The company server, extensions, marketplace and signing stay closed. Copyright: Abdulloh Shavkatjonov.</td></tr>
+        <tr><th scope="row" class="stick">Spending to date</th><td>AI tools provided through the idrock accelerator programme. No other money raised.</td></tr>
+        <tr><th scope="row" class="stick">Privacy</th><td>No telemetry; nothing is sent automatically from the app.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Risks we watch</h3>
+  <div class="wide scroll">
+    <table class="tbl" id="risks">
+      <caption class="sr">Risks and mitigations</caption>
+      <thead><tr><th scope="col" class="stick">Risk</th><th scope="col">Mitigation</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" class="stick">One-person team.</th><td>AI-assisted development with automatic checks; hire after the raise.</td></tr>
+        <tr><th scope="row" class="stick">Hardware prices rose sharply in 2026 (memory shortage).<sup class="fn">[<a href="#src-22">22</a>]</sup></th><td>We target mid-range and used hardware and measure each machine.</td></tr>
+        <tr><th scope="row" class="stick">Big companies may build local AI themselves.</th><td>Their IT teams ask us which hardware to buy; setup and support are what we sell.</td></tr>
+        <tr><th scope="row" class="stick">Agent features are still in development.</th><td>The preview is public, so every claim can be checked.</td></tr>
+        <tr><th scope="row" class="stick">Fine-tuning may not reach every goal.</th><td>Every model is measured with our test kit before release; if a smaller model isn't good enough, we keep the larger one.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="contact-line"><b>Contact:</b> Abdulloh Shavkatjonov · <a href="mailto:locallabs.io@gmail.com">locallabs.io@gmail.com</a> · product site<sup class="fn">[<a href="#src-8">8</a>]</sup> · Telegram community<sup class="fn">[<a href="#src-9">9</a>]</sup></p>
+</section>
+
+<!-- Appendix A -->
+<section id="hardware" class="sec appendix">
+  <h2><span class="n">Appendix A.</span> Hardware, speed and capacity</h2>
+  <p><b>We don't limit people to a few models.</b> localSpace runs open models from many makers (Qwen, Gemma, Mistral, Llama, Phi, gpt-oss and more), from 1B to 122B parameters. Bring your own model (0.2.1) loads any open model in GGUF format from Hugging Face. The app checks the computer and picks the best model that fits.</p>
+  <h3>A.1 Model classes</h3>
+  <p class="small">A <dfn>mixture-of-experts</dfn> (MoE) model uses only a few of its parts for each word, so it reads less data per word and runs faster than a dense model of the same size. File sizes: Qwen3.5<sup class="fn">[<a href="#src-23">23</a>, <a href="#src-24">24</a>, <a href="#src-25">25</a>, <a href="#src-26">26</a>]</sup>, Gemma 4<sup class="fn">[<a href="#src-27">27</a>]</sup>, gpt-oss<sup class="fn">[<a href="#src-28">28</a>, <a href="#src-29">29</a>]</sup>, Qwen3.5 122B-A10B<sup class="fn">[<a href="#src-30">30</a>]</sup>.</p>
+  <div class="wide scroll">
+<table class="tbl" id="classes">
+<caption class="sr">Model classes, with examples and quality</caption>
+<thead><tr><th scope="col" class="stick">Model class</th><th scope="col">Examples</th><th scope="col">Quality</th></tr></thead>
+<tbody>
+<tr data-class="tiny"><th scope="row" class="stick">Tiny, 1–2B</th><td>Qwen3.5 0.8B and 2B, Gemma 4 E2B, Llama 3.2 1B</td><td>Basic: quick answers, simple tasks</td></tr>
+<tr data-class="small"><th scope="row" class="stick">Small, 3–4B</th><td>Qwen3.5 4B, Gemma 4 E4B, Phi-4-mini, Ministral 3B</td><td>Basic+: everyday chat, pictures</td></tr>
+<tr data-class="medium"><th scope="row" class="stick">Medium, 7–9B</th><td>Qwen3.5 9B, Ministral 8B, Llama 3.1 8B</td><td>Good: everyday work, documents, pictures</td></tr>
+<tr data-class="upper"><th scope="row" class="stick">Upper-medium, 12–14B</th><td>Ministral 14B, Phi-4 14B, Qwen3 14B</td><td>Good+: longer documents, better reasoning</td></tr>
+<tr data-class="moe-mid"><th scope="row" class="stick">Fast mixture-of-experts, 20–35B</th><td>gpt-oss-20b (13 GB), Gemma 4 26B-A4B (16–18 GB), Qwen3.5 35B-A3B (21 GB)</td><td>Strong: reasoning and tool use, fast</td></tr>
+<tr data-class="dense-large"><th scope="row" class="stick">Large dense, 27–32B</th><td>Qwen3.5 27B, Gemma 4 31B, Qwen3 32B</td><td>Strong: hardest single-user tasks</td></tr>
+<tr data-class="moe-xl"><th scope="row" class="stick">Very large mixture-of-experts, 100–122B</th><td>gpt-oss-120b (61 GB), Qwen3.5 122B-A10B (72 GB), Mistral Small 4 119B</td><td>Very strong: closest to cloud assistants</td></tr>
+</tbody>
+</table>
+  </div>
+  <h3>A.2 Which model sizes run on which machine</h3>
+  <p class="small">Words a second for one person. "—" = doesn't fit. † = slow: part of the model in normal memory. <span class="badge m">measured</span> = our own measurement; rows marked <span class="badge e">estimate</span> are calculated. Prices: October 2026.<sup class="fn">[<a href="#src-16">16</a>, <a href="#src-31">31</a>, <a href="#src-32">32</a>, <a href="#src-33">33</a>, <a href="#src-34">34</a>, <a href="#src-35">35</a>, <a href="#src-36">36</a>, <a href="#src-37">37</a>]</sup></p>
+  <div class="wide scroll grid-box" tabindex="0" role="region" aria-label="Speed grid, scrolls sideways">
+<table class="tbl grid" id="grid-a">
+<caption class="sr">Words a second for one person, by machine and model class</caption>
+<thead><tr><th scope="col" class="stick">Machine</th><th scope="col" class="num">Price (USD)</th><th scope="col" class="num" data-class="tiny">Tiny 1–2B</th><th scope="col" class="num" data-class="small">Small 3–4B</th><th scope="col" class="num" data-class="medium">Medium 7–9B</th><th scope="col" class="num" data-class="upper">Upper 12–14B</th><th scope="col" class="num" data-class="moe-mid">MoE 20–35B</th><th scope="col" class="num" data-class="dense-large">Dense 27–32B</th><th scope="col" class="num" data-class="moe-xl">MoE 100–122B</th></tr></thead>
+<tbody>
+<tr data-tier="office-laptop"><th scope="row" class="stick">Office laptop, Iris Xe, 8 GB</th><td class="num price" data-price-min="400" data-price-max="800">400–800</td><td class="num cell" data-class="tiny" data-wps="10" data-fit="fits"><span class="v">10</span></td><td class="num cell" data-class="small" data-wps="5" data-fit="measured"><span class="badge m">measured</span> <span class="v">5</span></td><td class="num cell nofit" data-class="medium" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td><td class="num cell nofit" data-class="upper" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td><td class="num cell nofit" data-class="moe-mid" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td><td class="num cell nofit" data-class="dense-large" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td><td class="num cell nofit" data-class="moe-xl" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td></tr>
+<tr data-tier="laptop-4gb"><th scope="row" class="stick">Our 4 GB gaming laptop (RTX 3050 Ti)</th><td class="num price">older</td><td class="num cell" data-class="tiny" data-wps="36" data-fit="fits"><span class="v">36</span></td><td class="num cell" data-class="small" data-wps="19" data-fit="measured"><span class="badge m">measured</span> <span class="v">19</span></td><td class="num cell" data-class="medium" data-wps="7" data-fit="measured"><span class="badge m">measured</span> <span class="v">7</span></td><td class="num cell" data-class="upper" data-wps="2" data-fit="slow"><span class="v">2</span><span class="dag" aria-hidden="true">†</span><span class="sr">slow</span></td><td class="num cell nofit" data-class="moe-mid" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td><td class="num cell nofit" data-class="dense-large" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td><td class="num cell nofit" data-class="moe-xl" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td></tr>
+<tr data-tier="laptop-8gb"><th scope="row" class="stick">Gaming laptop, RTX 5060 8 GB <span class="badge e">estimate</span></th><td class="num price" data-price-min="1100" data-price-max="1300">1,100–1,300</td><td class="num cell" data-class="tiny" data-wps="73" data-fit="fits"><span class="v">73</span></td><td class="num cell" data-class="small" data-wps="36" data-fit="fits"><span class="v">36</span></td><td class="num cell" data-class="medium" data-wps="18" data-fit="fits"><span class="v">18</span></td><td class="num cell" data-class="upper" data-wps="6" data-fit="slow"><span class="v">6</span><span class="dag" aria-hidden="true">†</span><span class="sr">slow</span></td><td class="num cell nofit" data-class="moe-mid" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td><td class="num cell nofit" data-class="dense-large" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td><td class="num cell nofit" data-class="moe-xl" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td></tr>
+<tr data-tier="desktop-16gb"><th scope="row" class="stick">Office desktop, RTX 5060 Ti 16 GB <span class="badge e">estimate</span></th><td class="num price" data-price-min="1700" data-price-max="2000">1,700–2,000</td><td class="num cell" data-class="tiny" data-wps="112" data-fit="fits"><span class="v">112</span></td><td class="num cell" data-class="small" data-wps="56" data-fit="fits"><span class="v">56</span></td><td class="num cell" data-class="medium" data-wps="27" data-fit="fits"><span class="v">27</span></td><td class="num cell" data-class="upper" data-wps="19" data-fit="fits"><span class="v">19</span></td><td class="num cell" data-class="moe-mid" data-wps="22" data-fit="slow"><span class="v">22</span><span class="dag" aria-hidden="true">†</span><span class="sr">slow</span><a class="star" href="#grid-note" aria-label="see note">*</a></td><td class="num cell" data-class="dense-large" data-wps="5" data-fit="slow"><span class="v">5</span><span class="dag" aria-hidden="true">†</span><span class="sr">slow</span></td><td class="num cell nofit" data-class="moe-xl" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td></tr>
+<tr data-tier="desktop-24gb"><th scope="row" class="stick">Desktop, used RTX 3090 24 GB <span class="badge e">estimate</span></th><td class="num price" data-price-min="2300" data-price-max="2600">2,300–2,600</td><td class="num cell" data-class="tiny" data-wps="234" data-fit="fits"><span class="v">234</span></td><td class="num cell" data-class="small" data-wps="117" data-fit="fits"><span class="v">117</span></td><td class="num cell" data-class="medium" data-wps="57" data-fit="fits"><span class="v">57</span></td><td class="num cell" data-class="upper" data-wps="39" data-fit="fits"><span class="v">39</span></td><td class="num cell" data-class="moe-mid" data-wps="84" data-fit="fits"><span class="v">84</span></td><td class="num cell" data-class="dense-large" data-wps="20" data-fit="fits"><span class="v">20</span></td><td class="num cell nofit" data-class="moe-xl" data-wps=""><span aria-hidden="true">—</span><span class="sr">doesn't fit</span></td></tr>
+<tr data-tier="minipc-128gb"><th scope="row" class="stick">Mini PC, Ryzen AI Max+ 395, 128 GB <span class="badge e">estimate</span></th><td class="num price" data-price-min="3450" data-price-max="3650">3,450–3,650</td><td class="num cell" data-class="tiny" data-wps="64" data-fit="fits"><span class="v">64</span></td><td class="num cell" data-class="small" data-wps="32" data-fit="fits"><span class="v">32</span></td><td class="num cell" data-class="medium" data-wps="15" data-fit="fits"><span class="v">15</span></td><td class="num cell" data-class="upper" data-wps="11" data-fit="fits"><span class="v">11</span></td><td class="num cell" data-class="moe-mid" data-wps="23" data-fit="fits"><span class="v">23</span></td><td class="num cell" data-class="dense-large" data-wps="5" data-fit="fits"><span class="v">5</span></td><td class="num cell" data-class="moe-xl" data-wps="14" data-fit="fits"><span class="v">14</span></td></tr>
+<tr data-tier="dgx-spark"><th scope="row" class="stick">NVIDIA DGX Spark, 128 GB <span class="badge e">estimate</span></th><td class="num price" data-price-min="6950" data-price-max="6950">6,950</td><td class="num cell" data-class="tiny" data-wps="68" data-fit="fits"><span class="v">68</span></td><td class="num cell" data-class="small" data-wps="34" data-fit="fits"><span class="v">34</span></td><td class="num cell" data-class="medium" data-wps="17" data-fit="fits"><span class="v">17</span></td><td class="num cell" data-class="upper" data-wps="11" data-fit="fits"><span class="v">11</span></td><td class="num cell" data-class="moe-mid" data-wps="25" data-fit="fits"><span class="v">25</span></td><td class="num cell" data-class="dense-large" data-wps="6" data-fit="fits"><span class="v">6</span></td><td class="num cell" data-class="moe-xl" data-wps="15" data-fit="fits"><span class="v">15</span></td></tr>
+<tr data-tier="workstation-96gb"><th scope="row" class="stick">Workstation, RTX PRO 6000 96 GB <span class="badge e">estimate</span></th><td class="num price" data-price-min="13000" data-price-max="19000">13,000–19,000</td><td class="num cell" data-class="tiny" data-wps="448" data-fit="fits"><span class="v">448</span></td><td class="num cell" data-class="small" data-wps="224" data-fit="fits"><span class="v">224</span></td><td class="num cell" data-class="medium" data-wps="108" data-fit="fits"><span class="v">108</span></td><td class="num cell" data-class="upper" data-wps="75" data-fit="fits"><span class="v">75</span></td><td class="num cell" data-class="moe-mid" data-wps="161" data-fit="fits"><span class="v">161</span></td><td class="num cell" data-class="dense-large" data-wps="37" data-fit="fits"><span class="v">37</span></td><td class="num cell" data-class="moe-xl" data-wps="101" data-fit="fits"><span class="v">101</span></td></tr>
+</tbody>
+</table>
+  </div>
+  <p class="small" id="grid-note">* On the 16 GB desktop, gpt-oss-20b (13 GB) fits fully and runs at about 50 words a second.<sup class="fn">[<a href="#src-38">38</a>]</sup> The larger models in that class are the "slow" ones.</p>
+  <h3>A.3 How many people one machine serves <span class="badge e">estimate</span></h3>
+  <p>"Hardware per person" is what the company pays for the machine, split across the people it serves. It's paid once, to a shop, not to us. localSpace itself is free for personal use and $9 a person a month for Business. The per-month column spreads the machine's price over 3 years, so it can be compared with monthly prices.</p>
+  <div class="wide scroll">
+<table class="tbl" id="table-b">
+<caption class="sr">How many people one machine serves, and the hardware cost per person</caption>
+<thead><tr><th scope="col" class="stick">Machine</th><th scope="col">Model class</th><th scope="col" class="num">Chats at once</th><th scope="col" class="num">Team it serves (people)</th><th scope="col" class="num">Hardware per person, once (USD)</th><th scope="col" class="num">Hardware per person, a month over 3 years (USD)</th></tr></thead>
+<tbody data-tier="desktop-16gb">
+<tr data-class-name="Medium, 7-9B"><th scope="rowgroup" class="stick" rowspan="1">Office desktop, RTX 5060 Ti 16 GB (default)</th><td>Medium 7–9B</td><td class="num" data-chats="6">6</td><td class="num" data-team-min="18" data-team-max="30">18–30</td><td class="num" data-once="77">about 77</td><td class="num" data-month="2.1">about 2.1</td></tr>
+</tbody>
+<tbody data-tier="desktop-24gb">
+<tr data-class-name="Medium, 7-9B"><th scope="rowgroup" class="stick" rowspan="2">Desktop, used RTX 3090 24 GB (best value)</th><td>Medium 7–9B</td><td class="num" data-chats="12">12</td><td class="num" data-team-min="36" data-team-max="60">36–60</td><td class="num" data-once="51">about 51</td><td class="num" data-month="1.4">about 1.4</td></tr>
+<tr data-class-name="Fast mixture-of-experts, 20-35B"><td>MoE 20–35B</td><td class="num" data-chats="7">7</td><td class="num" data-team-min="21" data-team-max="35">21–35</td><td class="num" data-once="88">about 88</td><td class="num" data-month="2.4">about 2.4</td></tr>
+</tbody>
+<tbody data-tier="minipc-128gb">
+<tr data-class-name="Medium, 7-9B"><th scope="rowgroup" class="stick" rowspan="3">Mini PC, Ryzen AI Max+ 395, 128 GB</th><td>Medium 7–9B</td><td class="num" data-chats="3">3</td><td class="num" data-team-min="9" data-team-max="15">9–15</td><td class="num" data-once="296">about 296</td><td class="num" data-month="8.2">about 8.2</td></tr>
+<tr data-class-name="Fast mixture-of-experts, 20-35B"><td>MoE 20–35B</td><td class="num" data-chats="5">5</td><td class="num" data-team-min="15" data-team-max="25">15–25</td><td class="num" data-once="178">about 178</td><td class="num" data-month="4.9">about 4.9</td></tr>
+<tr data-class-name="Very large mixture-of-experts, 100-122B"><td>MoE 100–122B</td><td class="num" data-chats="3">3</td><td class="num" data-team-min="9" data-team-max="15">9–15</td><td class="num" data-once="296">about 296</td><td class="num" data-month="8.2">about 8.2</td></tr>
+</tbody>
+<tbody data-tier="dgx-spark">
+<tr data-class-name="Medium, 7-9B"><th scope="rowgroup" class="stick" rowspan="3">NVIDIA DGX Spark, 128 GB</th><td>Medium 7–9B</td><td class="num" data-chats="3">3</td><td class="num" data-team-min="9" data-team-max="15">9–15</td><td class="num" data-once="579">about 579</td><td class="num" data-month="16.1">about 16.1</td></tr>
+<tr data-class-name="Fast mixture-of-experts, 20-35B"><td>MoE 20–35B</td><td class="num" data-chats="5">5</td><td class="num" data-team-min="15" data-team-max="25">15–25</td><td class="num" data-once="348">about 348</td><td class="num" data-month="9.7">about 9.7</td></tr>
+<tr data-class-name="Very large mixture-of-experts, 100-122B"><td>MoE 100–122B</td><td class="num" data-chats="3">3</td><td class="num" data-team-min="9" data-team-max="15">9–15</td><td class="num" data-once="579">about 579</td><td class="num" data-month="16.1">about 16.1</td></tr>
+</tbody>
+<tbody data-tier="workstation-96gb">
+<tr data-class-name="Medium, 7-9B"><th scope="rowgroup" class="stick" rowspan="3">Workstation, RTX PRO 6000 96 GB</th><td>Medium 7–9B</td><td class="num" data-chats="24">24</td><td class="num" data-team-min="72" data-team-max="120">72–120</td><td class="num" data-once="167">about 167</td><td class="num" data-month="4.6">about 4.6</td></tr>
+<tr data-class-name="Fast mixture-of-experts, 20-35B"><td>MoE 20–35B</td><td class="num" data-chats="35">35</td><td class="num" data-team-min="105" data-team-max="175">105–175</td><td class="num" data-once="114">about 114</td><td class="num" data-month="3.2">about 3.2</td></tr>
+<tr data-class-name="Very large mixture-of-experts, 100-122B"><td>MoE 100–122B</td><td class="num" data-chats="22">22</td><td class="num" data-team-min="66" data-team-max="110">66–110</td><td class="num" data-once="182">about 182</td><td class="num" data-month="5.1">about 5.1</td></tr>
+</tbody>
+</table>
+  </div>
+  <p><b>How to read it:</b></p>
+  <ul>
+    <li>An ordinary desktop is the cheapest way to serve a team: about $1.40–2.40 a person a month of hardware.</li>
+    <li>The 128 GB machines (AMD mini PC, DGX Spark) cost more per person. They're for running very large models, not for serving many people.</li>
+    <li>With cloud AI at $20 a person a month, a company pays localSpace $9 plus about $1.40–2.40 of hardware, and keeps its data inside.</li>
+  </ul>
+  <h3>A.4 Recommendations</h3>
+  <ul>
+    <li><b>For people:</b> any laptop runs small models; a gaming laptop with an 8 GB card runs the 7–9B class well.</li>
+    <li><b>Small company (default):</b> office desktop with an RTX 5060 Ti 16 GB, about $1,700–2,000, for a team of 18–30 (about $77 a person once, or $2.10 a month over 3 years; hardware, not our price).</li>
+    <li><b>Best value:</b> a used RTX 3090 24 GB desktop, about $2,300–2,600, for a team of 36–60 (about $51 a person once, or $1.40 a month; hardware, not our price).</li>
+    <li><b>Biggest models on a budget:</b> the 128 GB AMD mini PC runs 100–122B models for a small team.</li>
+    <li><b>Not recommended now:</b> the RTX 5090, about $9,344 new in October 2026 after memory shortages.<sup class="fn">[<a href="#src-39">39</a>]</sup></li>
+  </ul>
+  <div class="note-box">
+    <p class="nb-title">How we got this</p>
+    <p>Speed for one person = memory bandwidth ÷ data read per word × efficiency. Example: 448 GB/s ÷ 6.2 GB × 0.5 = 36 tokens a second, about 27 words a second. The efficiency 0.38 is measured on our two laptops; 0.5 for desktop cards with dense models and 0.3 for mixture-of-experts models, both from a public RTX 3090 benchmark.<sup class="fn">[<a href="#src-40">40</a>]</sup> Chats at once = the smaller of two limits; team size = 3–5 × chats at once. <a href="#m-hardware">Appendix C: hardware</a>.</p>
+  </div>
+</section>
+
+<!-- Appendix B -->
+<section id="gpu" class="sec appendix">
+  <h2><span class="n">Appendix B.</span> GPU fine-tuning plan ($6,000)</h2>
+  <p>Why it matters: the smaller and smarter the model, the cheaper the computer that runs it. Every step below aims to give people and companies the same quality on cheaper hardware. These are goals, not results: each one is measured with our own test kit before we claim it.</p>
+  <div class="wide scroll">
+<table class="tbl" id="gpu-table">
+<caption class="sr">Fine-tuning steps and H100 hours</caption>
+<thead><tr><th scope="col" class="num">Step</th><th scope="col" class="stick">Work</th><th scope="col">What it means</th><th scope="col" class="num">H100 hours</th></tr></thead>
+<tbody>
+<tr data-step="1" data-hours="45"><td class="num">1</td><th scope="row" class="stick">Make training examples with a big open model</th><td>A large open model (gpt-oss-120b / Qwen3.5 122B) writes Uzbek and Russian answers and agent tool-use examples; native speakers spot-check them</td><td class="num">45</td></tr>
+<tr data-step="2" data-hours="85"><td class="num">2</td><th scope="row" class="stick">Teach small models more Uzbek</th><td>Continued training of 2B, 4B and 9B models on about 2 billion tokens each: public Uzbek web text (FineWeb-2: 2.3 million Uzbek documents, Latin and Cyrillic) mixed with Russian and English</td><td class="num">85</td></tr>
+<tr data-step="3" data-hours="153"><td class="num">3</td><th scope="row" class="stick">Teach them chat and agent tool use (distillation)</th><td>Small models learn from the big model's examples in English, Russian and Uzbek: following instructions, calling tools reliably, reading files; 6 rounds for 2B, 4B and 9B</td><td class="num">153</td></tr>
+<tr data-step="4" data-hours="339"><td class="num">4</td><th scope="row" class="stick">Make models smaller: low-bit training</th><td>Quantization-aware training to about 2 bits per weight (ternary), so a 9B model needs about 2.5-3 GB instead of 6.2 GB: 10B tokens for the 4B, 5B tokens for the 9B</td><td class="num">339</td></tr>
+<tr data-step="5" data-hours="62"><td class="num">5</td><th scope="row" class="stick">Tune one strong model for company servers</th><td>Uzbek and agent tuning of a fast 30-35B mixture-of-experts model (about 8,000 tokens/s per GPU), 3 rounds of 600M tokens</td><td class="num">62</td></tr>
+<tr data-step="6" data-hours="100"><td class="num">6</td><th scope="row" class="stick">Test every version</th><td>Convert to GGUF, run our own test kit for speed and mistakes in three languages, test on big GPUs</td><td class="num">100</td></tr>
+<tr data-step="repeats" data-hours="392"><td></td><th scope="row" class="stick">Repeats: failed runs and tuning (about +50%)</th><td></td><td class="num">392</td></tr>
+</tbody>
+<tfoot><tr class="total"><td></td><th scope="row" class="stick">Total</th><td></td><td class="num" data-total-hours="1176">1,176</td></tr></tfoot>
+</table>
+  </div>
+  <h3>B.1 Cost</h3>
+  <ul>
+    <li>1,176 hours × $3–5 an hour = about $3,528–5,880. The $6,000 budget assumes the upper end, because GPU prices rose in 2026.</li>
+    <li>H100 prices in October 2026: $1.99–3.99 on RunPod and $3.29–4.29 on Lambda.<sup class="fn">[<a href="#src-21">21</a>]</sup></li>
+    <li>If idrock gives us GPU cluster time, this line shrinks and the money moves to pilots.</li>
+  </ul>
+  <h3>B.2 Goals, each measured with our own test kit before we claim it</h3>
+  <div class="wide scroll">
+    <table class="tbl" id="goals">
+      <caption class="sr">Fine-tuning goals</caption>
+      <thead><tr><th scope="col" class="stick">Goal</th><th scope="col">Target</th><th scope="col">What it changes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" class="stick">Good Uzbek on small machines</th><td>A tuned 4B model answers Uzbek as well as today's 9B on our test set</td><td>Good Uzbek at ~19 words/s on 4 GB laptop cards (today's 9B: ~7) and ~5 words/s with no graphics card</td></tr>
+        <tr><th scope="row" class="stick">A 9B model in 3 GB</th><td>Low-bit 9B keeps quality within a few points of the normal 9B on our test set</td><td>Fits fully on 4 GB cards; about twice the speed on any machine; a company server holds about twice as many conversations</td></tr>
+        <tr><th scope="row" class="stick">Agents on mid-range computers</th><td>Small models call tools correctly in 9 of 10 tries on our agent test set</td><td>The localSpace agent works on ordinary laptops, not only on big GPUs</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>B.3 Why we think it works</h3>
+  <ul>
+    <li>A fine-tuned 770M model beat the 540B PaLM (few-shot) on a benchmark: over 700x smaller (Distilling Step-by-Step, 2023).<sup class="fn">[<a href="#src-41">41</a>]</sup></li>
+    <li>BitNet b1.58 2B4T: 0.4 GB of memory vs 1.4-4.8 GB for similar full-precision models, with similar benchmark scores (2025).<sup class="fn">[<a href="#src-42">42</a>]</sup></li>
+  </ul>
+  <h3>B.4 What we'll use</h3>
+  <ul>
+    <li>open models whose licences allow fine-tuning (for example Qwen, Apache 2.0);</li>
+    <li>public Uzbek text (FineWeb-2: 1,098,843 Latin-script and 1,247,285 Cyrillic-script Uzbek documents);<sup class="fn">[<a href="#src-43">43</a>]</sup></li>
+    <li>examples written by a large open model and spot-checked by native speakers.</li>
+  </ul>
+</section>
+
+<!-- Appendix C -->
+<section id="method" class="sec appendix">
+  <h2><span class="n">Appendix C.</span> Method and glossary</h2>
+
+  <h3 id="m-market">C.1 Market: TAM, SAM, SOM</h3>
+  <ol>
+    <li><b>TAM 2025 = $8.65B.</b> This is what companies worldwide spent on language-model AI in 2025 (GMI Insights).<sup class="fn">[<a href="#src-1">1</a>]</sup> We use it because local AI competes for the same budget: a company either pays a cloud service or runs AI itself.</li>
+    <li><b>TAM after 2025 = $8.65B × (1 + growth)<sup>years after 2025</sup>.</b> Each case uses a growth rate from a published report: min, 13.5% a year (GMI Insights)<sup class="fn">[<a href="#src-1">1</a>]</sup>; mid, 20.2% a year (Market.us, in-country "sovereign" AI)<sup class="fn">[<a href="#src-11">11</a>]</sup>; max, 28.3% a year (Research and Markets).<sup class="fn">[<a href="#src-12">12</a>]</sup> Example, mid 2030: $8.65B × 1.202<sup>5</sup> = <b>$21.70B</b>. 2025 is the same in every case because it has already happened; only the future growth differs.</li>
+    <li><b>SAM = TAM × 0.495%.</b> There's no published figure for AI spending in Central Asia, so we use its share of the world economy: $570.6B out of $115.3T (IMF, 2025).<sup class="fn">[<a href="#src-2">2</a>, <a href="#src-10">10</a>]</sup> Kazakhstan $306.0B, Uzbekistan $147.1B, Turkmenistan $77.4B, Kyrgyzstan $22.6B and Tajikistan $17.5B. We keep that share flat. It could be lower, because companies here adopt AI more slowly than in the US or Europe. It could also be higher, because these economies grow faster and personal data must stay in the country, which favours local AI. The min case covers the lower side. Example, 2025: $8.65B × 0.495% = <b>$42.8M</b>.</li>
+    <li><b>SOM = paid seats × $108 a year</b> ($9 a month × 12). The seats come from counting real organisations in Uzbekistan.<sup class="fn">[<a href="#src-13">13</a>, <a href="#src-14">14</a>, <a href="#src-15">15</a>, <a href="#src-44">44</a>]</sup> Example, mid 2029: 3 banks × 300 + 10 universities × 200 + 50 clinics × 20 + 100 companies × 20 = 5,900 seats; 5,900 × $108 = <b>$637,200</b>. The min plan has about one sixth of the mid seats, for slow sales. The max plan has about twice the mid seats, for faster sales. In 2025 and 2026 we have no revenue, so the SOM is $0.</li>
+  </ol>
+
+  <h3 id="m-hardware">C.2 Hardware: speed, people served, cost per person</h3>
+  <p>Worked example: the default office desktop with an RTX 5060 Ti 16 GB and a 9B model.</p>
+  <ol>
+    <li><b>Price:</b> the middle of the October 2026 range, ($1,700 + $2,000) ÷ 2 = $1,850.<sup class="fn">[<a href="#src-16">16</a>, <a href="#src-22">22</a>]</sup></li>
+    <li><b>Speed for one person = memory speed ÷ model size × efficiency.</b> Every word the AI writes reads the whole model from memory once, so memory speed sets the pace. Calculation: 448 GB/s ÷ 6.2 GB × 0.5 = <b>36 tokens a second</b>, about 27 words a second. The efficiency (0.5) comes from a public RTX 3090 benchmark.<sup class="fn">[<a href="#src-40">40</a>]</sup> On laptops we use 0.38, which we measured ourselves.</li>
+    <li><b>Chats at once = the smaller of two limits.</b> Memory: (16 GB − 6.2 GB model − 1.5 GB kept free) ÷ 0.5 GB per conversation = 16. Speed: when people share the machine, it produces about 2.5× more in total. 36 × 2.5 ÷ 15 tokens a second each (a comfortable reading speed) = 6. So: <b>6 chats at once</b>.</li>
+    <li><b>Team size = 3–5 × chats at once = 18–30 people.</b> In an office, only about 20–33% of people are waiting for an answer at the same moment; the rest are reading, typing or doing other work.</li>
+    <li><b>Hardware cost per person = $1,850 ÷ 24</b> (the middle of 18–30) = <b>$77 once</b>. Spread over 3 years of use, that's $77 ÷ 36 = <b>$2.14 a month</b>. This money goes to a shop, once. It isn't localSpace's price.</li>
+  </ol>
+  <p>Models partly in normal memory are much slower; our 9B on the 4 GB laptop ran at 9 tokens a second. Only cells marked "measured" are measured. Everything else is an estimate we'll confirm with our own test kit.</p>
+
+  <h3 id="m-savings">C.3 What it saves a company</h3>
+  <p>Example: a team of 24 people. Software, per year: cloud AI $20 × 24 × 12 = $5,760; localSpace $9 × 24 × 12 = $2,592. Hardware, per year: cloud AI none; localSpace $1,850 ÷ 3 years = $617. Total per year: $5,760 against $3,209. Over 3 years: $17,280 against $9,626. The company saves about $2,550 a year (44%) and its data never leaves the building.</p>
+
+  <h3 id="m-pricing">C.4 Our pricing ($9)</h3>
+  <ul>
+    <li>$9 is less than half of cloud AI ($20 a person a month, billed yearly).</li>
+    <li>We can charge less because the AI runs on the customer's hardware: we don't pay for each message.</li>
+    <li>Personal use stays free; that's how people find us and how companies first try us.</li>
+  </ul>
+
+  <h3 id="m-gpu">C.5 GPU plan: hours and cost</h3>
+  <p><b>Hours = tokens to train ÷ speed of one H100 ÷ 3,600.</b></p>
+  <div class="wide scroll">
+    <table class="tbl" id="h100-speed">
+      <caption class="sr">Training speed per H100</caption>
+      <thead><tr><th scope="col" class="stick">Model size</th><th scope="col" class="num">Speed per H100 (tokens a second)</th><th scope="col">Source</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" class="stick">9B</th><td class="num">about 11,000</td><td>from NVIDIA's measured 12,400 for an 8B model<sup class="fn">[<a href="#src-45">45</a>]</sup></td></tr>
+        <tr><th scope="row" class="stick">4B</th><td class="num">about 25,000</td><td></td></tr>
+        <tr><th scope="row" class="stick">2B</th><td class="num">about 45,000</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Example, step 2 for the 9B model: 2,000,000,000 tokens ÷ 11,000 ÷ 3,600 = <b>about 50 hours</b>. The six steps add up to 784 hours. We add 50% (392 hours) for failed runs and tuning, which is normal in model training, for a total of 1,176 hours. At $3–5 an hour that's about $3,500–5,900. We budget $6,000 because GPU prices rose in 2026.</p>
+
+  <h3 id="m-tokens">C.6 Words and tokens</h3>
+  <ul>
+    <li>AI models count text in tokens. One token is about three quarters of an English word, so 25 tokens a second is about 19 words a second.</li>
+    <li>Uzbek and Russian words use more tokens than English words, so in those languages the words-a-second figure is a little lower.</li>
+  </ul>
+
+  <h3 id="m-measured">C.7 What is measured and what is estimated</h3>
+  <p><b>Measured by us:</b></p>
+  <ul>
+    <li>Qwen3.5 4B on our 4 GB laptop: 25.1–25.6 tokens a second, in English, Russian and Uzbek, 24 October 2026.</li>
+    <li>Qwen3.5 9B on the same laptop: about 9 tokens a second.</li>
+    <li>Qwen3.5 4B with no graphics card: 6–7 tokens a second, 20 October 2026.</li>
+  </ul>
+  <p><b>Estimated:</b> everything else in the hardware section, using the formulas above. We'll measure the server machines with our test kit; that's part of the use of funds.</p>
+
+  <h3 id="glossary">C.8 Glossary</h3>
+  <dl class="gloss">
+    <div><dt>TAM</dt><dd>Total addressable market: the global market. Here, company spending on language-model AI worldwide.</dd></div>
+    <div><dt>SAM</dt><dd>Serviceable available market: the part we can reach. Here, Central Asia.</dd></div>
+    <div><dt>SOM</dt><dd>Serviceable obtainable market: what we plan to win. Here, paid seats in Uzbekistan.</dd></div>
+    <div><dt>Token</dt><dd>The unit AI models count text in; about three quarters of an English word.</dd></div>
+    <div><dt>Mixture-of-experts (MoE)</dt><dd>A model that uses only a few of its parts for each word, so it reads less data per word and runs faster than a dense model of the same size.</dd></div>
+    <div><dt>Dense model</dt><dd>A model that uses all of its parts for every word.</dd></div>
+    <div><dt>GGUF</dt><dd>The file format open models use with the llama.cpp engine, which localSpace runs on.</dd></div>
+    <div><dt>H100</dt><dd>An NVIDIA data-centre graphics card, rented by the hour for training.</dd></div>
+    <div><dt>Fine-tuning</dt><dd>Further training of an existing open model on new examples, such as Uzbek text or tool-use examples.</dd></div>
+    <div><dt>Seat</dt><dd>One person at a paying company, at $9 a month.</dd></div>
+  </dl>
+</section>
+
+<!-- Appendix D -->
+<section id="history" class="sec appendix">
+  <h2><span class="n">Appendix D.</span> History</h2>
+  <div class="wide scroll">
+    <table class="tbl" id="history-table">
+      <caption class="sr">History, from the beginning</caption>
+      <thead><tr><th scope="col" class="stick">When</th><th scope="col">What happened</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" class="stick">August 2026</th><td>First specification: a private AI workstation in Rust, running open models fully offline. Focus first set on companies (banks, clinics, research labs).</td></tr>
+        <tr><th scope="row" class="stick">September 2026</th><td>Rebuilt on the current stack: Rust core, desktop app (Tauri), llama.cpp engine. Multi-user core built with automatic checks.</td></tr>
+        <tr><th scope="row" class="stick">22 September 2026</th><td>Test A: 10+ testers on their own laptops.</td></tr>
+        <tr><th scope="row" class="stick">25 September 2026</th><td>Source code made public on GitHub.</td></tr>
+        <tr><th scope="row" class="stick">October 2026</th><td>Joined the idrock accelerator programme.</td></tr>
+        <tr><th scope="row" class="stick">October 2026</th><td>Models updated to Qwen3.5, Gemma 4 and Ministral. Whiteboard removed to focus on chat and agents.</td></tr>
+        <tr><th scope="row" class="stick">18 October 2026</th><td>Pictures in chat added, after a request from a tester with an RTX 5080.</td></tr>
+        <tr><th scope="row" class="stick">20 October 2026</th><td>Ran on a laptop with no graphics card (Iris Xe, 8 GB): 6–7 tokens a second.</td></tr>
+        <tr><th scope="row" class="stick">October 2026</th><td>Public preview v0.2.0-preview.1 released. Landing page with a download counter. Telegram community opened.</td></tr>
+        <tr><th scope="row" class="stick">21 October 2026</th><td>Licence decided: Apache 2.0 for the personal app and SDK; the company server stays closed.</td></tr>
+        <tr><th scope="row" class="stick">24 October 2026</th><td>Handwritten maths test passed in English, Russian and Uzbek.</td></tr>
+        <tr><th scope="row" class="stick">11–12 November 2026</th><td>Release 0.2.0 check (planned).</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Appendix E -->
+<section id="sources" class="sec appendix">
+  <h2><span class="n">Appendix E.</span> Sources</h2>
+  <p class="small">Numbered in the order they first appear. Speed numbers marked "measured" are our own measurements on our test laptops, October 2026.</p>
+<ol class="sources">
+<li id="src-1"><span class="st">Enterprise LLM Market (TAM base, min growth 13.5%).</span> GMI Insights. <a href="https://www.gminsights.com/industry-analysis/enterprise-llm-market" target="_blank" rel="noopener">https://www.gminsights.com/industry-analysis/enterprise-llm-market<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-2"><span class="st">IMF GDP 2025 by country.</span> Worldometer. <a href="https://www.worldometers.info/gdp/gdp-by-country/?region=worldwide&amp;year=2025&amp;metric=nominal" target="_blank" rel="noopener">https://www.worldometers.info/gdp/gdp-by-country/?region=worldwide&amp;year=2025&amp;metric=nominal<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-3"><span class="st">Uzbekistan personal-data law, ZRU-666.</span> Mondaq. <a href="https://mondaq.com/data-protection/1197754/the-law-on-personal-data-has-been-amended" target="_blank" rel="noopener">https://mondaq.com/data-protection/1197754/the-law-on-personal-data-has-been-amended<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-4"><span class="st">Enterprise AI hits the wall (May 2026).</span> NTT DATA. <a href="https://www.nttdata.com/en-us/news/2026/enterprise-ai-hits-the-wall-ntt-data-research-reveals-growing-privacy-and-sovereignty-barriers" target="_blank" rel="noopener">https://www.nttdata.com/en-us/news/2026/enterprise-ai-hits-the-wall-ntt-data-research-reveals-growing-privacy-and-sovereignty-barriers<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-5"><span class="st">ChatGPT Business price.</span> Elephas. <a href="https://elephas.app/resources/chatgpt-business-pricing" target="_blank" rel="noopener">https://elephas.app/resources/chatgpt-business-pricing<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-6"><span class="st">Claude Team price.</span> Krater. <a href="https://krater.ai/blog/claude-team-plan-pricing" target="_blank" rel="noopener">https://krater.ai/blog/claude-team-plan-pricing<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-7"><span class="st">Microsoft 365 Copilot price.</span> eesel AI. <a href="https://eesel.ai/blog/copilot-pricing" target="_blank" rel="noopener">https://eesel.ai/blog/copilot-pricing<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-8"><span class="st">Product site and preview download.</span> localSpace. <a href="https://linusip.github.io/localLabs/" target="_blank" rel="noopener">https://linusip.github.io/localLabs/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-9"><span class="st">Community.</span> Telegram. <a href="https://t.me/localSpace_discussion" target="_blank" rel="noopener">https://t.me/localSpace_discussion<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-10"><span class="st">World GDP 2025, $115.3T (IMF).</span> BusinessDay. <a href="https://businessday.ng/news/article/top-10-largest-economies-in-the-115tn-world-of-2025/" target="_blank" rel="noopener">https://businessday.ng/news/article/top-10-largest-economies-in-the-115tn-world-of-2025/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-11"><span class="st">Sovereign AI Market (mid growth 20.2%).</span> Market.us. <a href="https://market.us/report/sovereign-ai-market/" target="_blank" rel="noopener">https://market.us/report/sovereign-ai-market/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-12"><span class="st">Enterprise LLM Market (max growth 28.3%).</span> Research and Markets. <a href="https://www.researchandmarkets.com/reports/6176712/enterprise-llm-market-size-share-and-trends" target="_blank" rel="noopener">https://www.researchandmarkets.com/reports/6176712/enterprise-llm-market-size-share-and-trends<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-13"><span class="st">34 banks in Uzbekistan (CERR).</span> Kun.uz. <a href="https://kun.uz/en/news/2026/07/27/uzbekistans-banking-sector-poss-two-thirds-increase-in-net-profit" target="_blank" rel="noopener">https://kun.uz/en/news/2026/07/27/uzbekistans-banking-sector-poss-two-thirds-increase-in-net-profit<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-14"><span class="st">215 universities, 1.535M students.</span> Yep.uz. <a href="https://yep.uz/en/2026/06/higher-education-uzbekistan-2026/" target="_blank" rel="noopener">https://yep.uz/en/2026/06/higher-education-uzbekistan-2026/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-15"><span class="st">9,000+ private clinics.</span> UzDaily. <a href="https://www.uzdaily.uz/en/number-of-private-healthcare-institutions-in-uzbekistan-exceeds-9000/" target="_blank" rel="noopener">https://www.uzdaily.uz/en/number-of-private-healthcare-institutions-in-uzbekistan-exceeds-9000/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-16"><span class="st">RTX 5060 Ti 16 GB and RTX 3090 prices.</span> GPU Price History. <a href="https://gpupricehistory.com/us/rtx-5060-ti/vs/rtx-3090" target="_blank" rel="noopener">https://gpupricehistory.com/us/rtx-5060-ti/vs/rtx-3090<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-17"><span class="st">Code-signing certificate prices.</span> SSL Insights. <a href="https://sslinsights.com/sectigo-code-signing-certificate-guide/" target="_blank" rel="noopener">https://sslinsights.com/sectigo-code-signing-certificate-guide/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-18"><span class="st">Azure Artifact Signing pricing.</span> iTechGuides. <a href="https://www.itechguides.com/products/azure-artifact-signing/" target="_blank" rel="noopener">https://www.itechguides.com/products/azure-artifact-signing/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-19"><span class="st">Windows code signing options.</span> Microsoft. <a href="https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/code-signing-options" target="_blank" rel="noopener">https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/code-signing-options<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-20"><span class="st">Coding assistant, $200 a month.</span> IntuitionLabs. <a href="https://intuitionlabs.ai/articles/claude-max-plan-pricing-usage-limits" target="_blank" rel="noopener">https://intuitionlabs.ai/articles/claude-max-plan-pricing-usage-limits<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-21"><span class="st">GPU rent, H100 prices.</span> IntuitionLabs. <a href="https://intuitionlabs.ai/articles/h100-rental-prices-cloud-comparison" target="_blank" rel="noopener">https://intuitionlabs.ai/articles/h100-rental-prices-cloud-comparison<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-22"><span class="st">32 GB DDR5 at $375 minimum.</span> Tom's Hardware. <a href="https://www.tomshardware.com/pc-components/ddr5/32gb-of-ddr5-now-costs-usd375-minimum-ai-shortage-continues-to-squeeze-pc-building" target="_blank" rel="noopener">https://www.tomshardware.com/pc-components/ddr5/32gb-of-ddr5-now-costs-usd375-minimum-ai-shortage-continues-to-squeeze-pc-building<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-23"><span class="st">Qwen3.5 4B file sizes.</span> Hugging Face (bartowski). <a href="https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF" target="_blank" rel="noopener">https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-24"><span class="st">Qwen3.5 9B file sizes.</span> Hugging Face (bartowski). <a href="https://huggingface.co/bartowski/Qwen_Qwen3.5-9B-GGUF" target="_blank" rel="noopener">https://huggingface.co/bartowski/Qwen_Qwen3.5-9B-GGUF<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-25"><span class="st">Qwen3.5 27B file sizes.</span> Hugging Face (bartowski). <a href="https://huggingface.co/bartowski/Qwen_Qwen3.5-27B-GGUF" target="_blank" rel="noopener">https://huggingface.co/bartowski/Qwen_Qwen3.5-27B-GGUF<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-26"><span class="st">Qwen3.5 35B-A3B file sizes.</span> ModelFit. <a href="https://modelfit.io/quant-compare/qwen3.5-35b-a3b/" target="_blank" rel="noopener">https://modelfit.io/quant-compare/qwen3.5-35b-a3b/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-27"><span class="st">Gemma 4 sizes and memory.</span> Unsloth. <a href="https://unsloth.ai/docs/models/gemma-4" target="_blank" rel="noopener">https://unsloth.ai/docs/models/gemma-4<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-28"><span class="st">gpt-oss-20b parameters and memory.</span> CanIRun.ai. <a href="https://canirun.ai/model/gpt-oss-20b/" target="_blank" rel="noopener">https://canirun.ai/model/gpt-oss-20b/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-29"><span class="st">gpt-oss-120b parameters and memory.</span> Yotta Labs. <a href="https://www.yottalabs.ai/post/gpt-oss-120b-hardware-requirements-gpu-memory-2026" target="_blank" rel="noopener">https://www.yottalabs.ai/post/gpt-oss-120b-hardware-requirements-gpu-memory-2026<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-30"><span class="st">Qwen3.5 122B-A10B size.</span> ModelFit. <a href="https://modelfit.io/blog/qwen35-122b-a10b-vram-requirements/" target="_blank" rel="noopener">https://modelfit.io/blog/qwen35-122b-a10b-vram-requirements/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-31"><span class="st">Used graphics card prices, September 2026.</span> PC Server and Parts. <a href="https://pcserverandparts.com/news/used-graphics-card-buying-guide-2026/" target="_blank" rel="noopener">https://pcserverandparts.com/news/used-graphics-card-buying-guide-2026/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-32"><span class="st">Ryzen AI Max+ 395 mini PC prices.</span> Compute Market. <a href="https://www.compute-market.com/blog/strix-halo-mini-pc-local-ai-2026" target="_blank" rel="noopener">https://www.compute-market.com/blog/strix-halo-mini-pc-local-ai-2026<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-33"><span class="st">DGX Spark prices.</span> KuCoin News. <a href="https://www.kucoin.com/news/flash/nvidia-launches-64gb-dgx-spark-at-4999-128gb-version-rises-to-6950" target="_blank" rel="noopener">https://www.kucoin.com/news/flash/nvidia-launches-64gb-dgx-spark-at-4999-128gb-version-rises-to-6950<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-34"><span class="st">RTX PRO 6000 price over $10,000.</span> Digital Citizen. <a href="https://www.digitalcitizen.life/nvidia-rtx-pro-6000-blackwell-prices-climb-past-10000-as-ai-demand-keeps-rising/" target="_blank" rel="noopener">https://www.digitalcitizen.life/nvidia-rtx-pro-6000-blackwell-prices-climb-past-10000-as-ai-demand-keeps-rising/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-35"><span class="st">RTX 5060 laptop, Acer Nitro V $1,100.</span> WePC. <a href="https://www.wepc.com/news/nitro-v-rtx-5060-gaming-laptop-falls-back-to-its-lowest-price-so-far" target="_blank" rel="noopener">https://www.wepc.com/news/nitro-v-rtx-5060-gaming-laptop-falls-back-to-its-lowest-price-so-far<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-36"><span class="st">RTX 5060 laptop, HP Omen 16 $1,279.</span> Tom's Guide. <a href="https://www.tomsguide.com/computing/gaming-laptops/score-rtx-5060-equipped-hp-omen-16-is-at-its-lowest-ever-price-usd300-off-for-a-limited-time" target="_blank" rel="noopener">https://www.tomsguide.com/computing/gaming-laptops/score-rtx-5060-equipped-hp-omen-16-is-at-its-lowest-ever-price-usd300-off-for-a-limited-time<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-37"><span class="st">Budget Iris Xe laptops (India list prices).</span> MySmartPrice. <a href="https://www.mysmartprice.com/computer/pricelist/core-i5-11th-gen-laptops-price-list-in-india.html" target="_blank" rel="noopener">https://www.mysmartprice.com/computer/pricelist/core-i5-11th-gen-laptops-price-list-in-india.html<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-38"><span class="st">Model speeds on a 16 GB card (llama.cpp benchmarks).</span> glukhov.org. <a href="https://glukhov.org/llm-performance/benchmarks/best-llm-on-16gb-vram-gpu/" target="_blank" rel="noopener">https://glukhov.org/llm-performance/benchmarks/best-llm-on-16gb-vram-gpu/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-39"><span class="st">RTX 5090 price, October 2026.</span> BestValueGPU. <a href="https://bestvaluegpu.com/history/new-and-used-rtx-5090-price-history-and-specs/" target="_blank" rel="noopener">https://bestvaluegpu.com/history/new-and-used-rtx-5090-price-history-and-specs/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-40"><span class="st">RTX 3090 speed benchmark.</span> Hardware Corner. <a href="https://www.hardware-corner.net/gpu-llm-benchmarks/rtx-3090/" target="_blank" rel="noopener">https://www.hardware-corner.net/gpu-llm-benchmarks/rtx-3090/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-41"><span class="st">Distilling Step-by-Step (small model beats a 700x larger one).</span> arXiv. <a href="https://arxiv.org/pdf/2305.02301" target="_blank" rel="noopener">https://arxiv.org/pdf/2305.02301<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-42"><span class="st">BitNet b1.58 2B4T technical report (low-bit model, 0.4 GB).</span> arXiv. <a href="https://arxiv.org/pdf/2504.12285" target="_blank" rel="noopener">https://arxiv.org/pdf/2504.12285<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-43"><span class="st">FineWeb-2 dataset (Uzbek subsets).</span> Hugging Face. <a href="https://huggingface.co/datasets/HuggingFaceFW/fineweb-2" target="_blank" rel="noopener">https://huggingface.co/datasets/HuggingFaceFW/fineweb-2<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-44"><span class="st">671,664 operating enterprises, 1 Jan 2026.</span> INVEXI. <a href="https://invexi.org/press/economic-situation-of-the-republic-of-uzbekistan-for-2025/" target="_blank" rel="noopener">https://invexi.org/press/economic-situation-of-the-republic-of-uzbekistan-for-2025/<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-45"><span class="st">DGX Cloud benchmark, fine-tuning Llama 3 8B on H100.</span> NVIDIA NGC. <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/teams/dgxc-benchmarking/resources/ft-llama3-8b-dgxc-benchmarking-e" target="_blank" rel="noopener">https://catalog.ngc.nvidia.com/orgs/nvidia/teams/dgxc-benchmarking/resources/ft-llama3-8b-dgxc-benchmarking-e<span class="ext" aria-hidden="true"> ↗</span></a></li>
+<li id="src-46"><span class="st">gpt-oss-120b throughput on H100 (InferenceX).</span> SemiAnalysis. <a href="https://inferencex.semianalysis.com/compare/gptoss-120b-h100-vs-h200" target="_blank" rel="noopener">https://inferencex.semianalysis.com/compare/gptoss-120b-h100-vs-h200<span class="ext" aria-hidden="true"> ↗</span></a></li>
+</ol>
+</section>
+
+<footer class="foot">
+  <p>localSpace, investor data room, 24 October 2026 · Last updated: <time datetime="2026-10-24">24 October 2026</time></p>
+  <p>This page sets no cookies and makes no requests to other sites.</p>
+</footer>
+
+</main>
+</div>
+<div class="tip" role="status" aria-live="polite" hidden></div>
+<script src="app.js" defer></script>
+</body>
+</html>

@@ -72,15 +72,20 @@ for h in HW:
             c=next(x for x in CLASSES if x["id"]==cid); r=run(h,c)
             if r["fit"]!="fits": continue
             slots=math.floor((h["mem"]-c["file"]-FREE)/c["kv"]); thr=math.floor(r["tps"]*GAIN/TARGET)
-            conc=max(1,min(slots,thr)); serve.append(dict(model_class=c["name"],chats_at_once=conc,team_size=[conc*3,conc*5]))
+            conc=max(1,min(slots,thr)); team=[conc*3,conc*5]
+            pm=None if h["price"] is None else sum(h["price"])/2
+            once=None if pm is None else round(pm/(sum(team)/2))
+            serve.append(dict(model_class=c["name"],chats_at_once=conc,team_size=team,
+                hardware_cost_per_person_once_usd=once,
+                hardware_cost_per_person_month_usd=None if once is None else round(once/36,1)))
     pmid=None if h["price"] is None else sum(h["price"])/2
     best=max(serve,key=lambda s:s["chats_at_once"]) if serve else None
-    ppp=None if (not best or pmid is None) else round(pmid/(sum(best["team_size"])/2))
+    ppp=None
     out.append(dict(id=h["id"],name=h["name"],role=h["role"],price_usd=h["price"],price_note=h["price_note"],
-        memory_bandwidth_gbs=h["bw"],ai_memory_gb=h["mem"],support=h["support"],classes=cells,serving=serve,price_per_person_served_usd=ppp))
+        memory_bandwidth_gbs=h["bw"],ai_memory_gb=h["mem"],support=h["support"],classes=cells,serving=serve))
 json.dump(dict(note="Any open model in GGUF format can be loaded with 'bring your own model' (0.2.1). Classes below are by size; the app picks the best that fits.",
     assumptions=dict(efficiency_laptop_measured=EFF_LAPTOP,efficiency_desktop_dense=EFF_DENSE,efficiency_moe=EFF_MOE,sharing_gain=GAIN,
-    tokens_per_person=TARGET,kept_free_gb=FREE,words_per_token=WORDS,team_size_rule="3x-5x chats at once"),
+    tokens_per_person=TARGET,kept_free_gb=FREE,words_per_token=WORDS,team_size_rule="3x-5x chats at once", hardware_cost_rule="machine price (middle of range) / middle of team size; per month = spread over 3 years. This is the company's one-time hardware cost, not localSpace's price (Personal is free; Business is $9 a person a month)."),
     model_classes=CLASSES,tiers=out),open("data/hardware.json","w"),indent=1,ensure_ascii=False)
 hdr="%-38s"%"" + "".join("%-13s"%c["id"] for c in CLASSES); print(hdr)
 for t in out:
@@ -88,4 +93,4 @@ for t in out:
     for c in CLASSES:
         x=t["classes"][c["id"]]; s="—" if x["words_per_sec"] is None else str(x["words_per_sec"])+("m" if x["fit"]=="measured" else ("s" if x["fit"].startswith("slow") else ""))
         row+="%-13s"%s
-    print(row, t["serving"], t["price_per_person_served_usd"])
+    print(row)
