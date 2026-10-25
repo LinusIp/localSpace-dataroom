@@ -4,6 +4,8 @@ This file holds every word and number for the investor page. The numbers in `dat
 
 Last updated: 24 October 2026.
 
+**Layout:** CLAUDE.md sections 3 and 4 decide the page order and design. Where this file mentions cards, big numbers, circles or similar visuals, treat that as an old hint and follow CLAUDE.md. Take only the words, numbers and links from this file.
+
 ---
 
 ## 0. Hero
@@ -16,6 +18,14 @@ Last updated: 24 October 2026.
   - "Download the preview": https://linusip.github.io/localLabs/
   - "Join the community": https://t.me/localSpace_discussion
   - "Contact": mailto:locallabs.io@gmail.com
+
+## 0b. How to read this page (short strip under the hero)
+
+- **Measured** numbers carry a "measured" badge: our own tests on real laptops.
+- **Estimates** carry an "estimate" badge, and each one has a "How we got this" box that shows the formula and a worked example.
+- Every outside number links to its source (full list at the bottom).
+- Money is in US dollars, at October 2026 prices.
+- Last updated: 24 October 2026.
 
 ## 1. Snapshot (four big numbers)
 
@@ -126,23 +136,32 @@ Grid values (words a second, from `data/hardware.json`; m = measured, s = slow):
 
 **B. How many people one machine serves** (company servers):
 
-| Machine | Model class | Chats at once | Team it serves | Price per person served |
-|---|---|---|---|---|
-| Office desktop, RTX 5060 Ti 16 GB (default) | Medium 7–9B | 6 | 18–30 | about $77 |
-| Desktop, used RTX 3090 24 GB (best value) | Medium 7–9B | 12 | 36–60 | about $51 |
-| | MoE 20–35B | 7 | 21–35 | |
-| Mini PC, Ryzen AI Max+ 395, 128 GB | MoE 100–122B | 3 | 9–15 | |
-| | MoE 20–35B | 5 | 15–25 | about $178 |
-| NVIDIA DGX Spark, 128 GB | MoE 100–122B | 3 | 9–15 | |
-| | MoE 20–35B | 5 | 15–25 | about $348 |
-| Workstation, RTX PRO 6000 96 GB | Medium 7–9B | 24 | 72–120 | |
-| | MoE 20–35B | 35 | 105–175 | about $114 |
-| | MoE 100–122B | 22 | 66–110 | |
+"Hardware per person" is what the company pays for the machine, split across the people it serves. It's paid once, to a shop, not to us. localSpace itself is free for personal use and $9 a person a month for Business. The per-month column spreads the machine's price over 3 years, so it can be compared with monthly prices.
+
+| Machine | Model class | Chats at once | Team it serves | Hardware per person, one-time | Hardware per person, per month (over 3 years) |
+|---|---|---|---|---|---|
+| Office desktop, RTX 5060 Ti 16 GB (default) | Medium 7–9B | 6 | 18–30 | about $77 | about $2.1 |
+| Desktop, used RTX 3090 24 GB (best value) | Medium 7–9B | 12 | 36–60 | about $51 | about $1.4 |
+|  | MoE 20–35B | 7 | 21–35 | about $88 | about $2.4 |
+| Mini PC, Ryzen AI Max+ 395, 128 GB | Medium 7–9B | 3 | 9–15 | about $296 | about $8.2 |
+|  | MoE 20–35B | 5 | 15–25 | about $178 | about $4.9 |
+|  | MoE 100–122B | 3 | 9–15 | about $296 | about $8.2 |
+| NVIDIA DGX Spark, 128 GB | Medium 7–9B | 3 | 9–15 | about $579 | about $16.1 |
+|  | MoE 20–35B | 5 | 15–25 | about $348 | about $9.7 |
+|  | MoE 100–122B | 3 | 9–15 | about $579 | about $16.1 |
+| Workstation, RTX PRO 6000 96 GB | Medium 7–9B | 24 | 72–120 | about $167 | about $4.6 |
+|  | MoE 20–35B | 35 | 105–175 | about $114 | about $3.2 |
+|  | MoE 100–122B | 22 | 66–110 | about $182 | about $5.1 |
+
+How to read it:
+- An ordinary desktop is the cheapest way to serve a team: about $1.40–2.40 a person a month of hardware.
+- The 128 GB machines (AMD mini PC, DGX Spark) cost more per person. They're for running very large models, not for serving many people.
+- With cloud AI at $20 a person a month, a company pays localSpace $9 plus about $1.40–2.40 of hardware, and keeps its data inside.
 
 **Recommendations:**
 - **For people:** any laptop runs small models; a gaming laptop with an 8 GB card runs the 7–9B class well.
-- **Small company (default):** office desktop with an RTX 5060 Ti 16 GB, about $1,700–2,000, for a team of 18–30.
-- **Best value:** a used RTX 3090 24 GB desktop, about $2,300–2,600, for a team of 36–60.
+- **Small company (default):** office desktop with an RTX 5060 Ti 16 GB, about $1,700–2,000, for a team of 18–30 (about $77 a person once, or $2.10 a month over 3 years).
+- **Best value:** a used RTX 3090 24 GB desktop, about $2,300–2,600, for a team of 36–60 (about $51 a person once, or $1.40 a month).
 - **Biggest models on a budget:** the 128 GB AMD mini PC runs 100–122B models for a small team.
 - **Not recommended now:** the RTX 5090, about $9,344 new in October 2026 after memory shortages.
 
@@ -164,29 +183,38 @@ Grid values (words a second, from `data/hardware.json`; m = measured, s = slow):
 - **SAM:** Central Asia.
 - **SOM:** Uzbekistan, what we plan to win.
 
-Use `data/market.json`. Show a chart (three lines per level or a stacked view, scenario switcher min/mid/max) and the table.
+**2025 is a known base year, the same in every case.** Min, mid and max differ only in how fast the market grows after 2025. Use `data/market.json`:
+- show 2025 as one number per level (not three);
+- add a min/mid/max switcher for 2026–2030 (default: mid);
+- add a line chart where the three cases start from the same 2025 point and fan out;
+- add the table below.
 
-**TAM: three definitions, all from published reports**
-- **Min:** LLM software run on companies' own servers (GMI Insights, on-premises segment). $1.55B in 2025, growing 14.8% a year, to **$3.09B in 2030**.
-- **Mid:** all company spending on language-model AI, the spend local AI competes for (GMI Insights). $8.65B in 2025, growing 13.5% a year, to **$16.29B in 2030**.
-- **Max:** on-premises enterprise AI of every kind (Grand View Research: enterprise AI $155.2B by 2030, 37.6% a year; on-premises about 34.2%, since cloud is 65.8%). $10.76B in 2025, to **$53.08B in 2030**.
-- Cross-check: Market.us puts sovereign AI at $41.1B in 2025 (41% on-premises), growing 20.2% a year.
+**2025 base (one number each)**
+- **TAM: $8.65B.** Company spending on language-model AI worldwide (GMI Insights). Of this, the part run on companies' own servers was $1.55B.
+- **SAM: $42.8M.** Central Asia's share. Central Asia is 0.495% of the world economy: Kazakhstan $306.0B, Uzbekistan $147.1B, Turkmenistan $77.4B, Kyrgyzstan $22.6B and Tajikistan $17.5B, together $570.6B out of $115.3T (IMF, 2025). We keep that share flat. It could be lower, because companies here adopt AI more slowly than in the US or Europe. It could also be higher, because these economies grow faster and personal data must stay in the country, which favours local AI. The min case covers the lower side.
+- **SOM: $0.** No revenue yet; our first paid seats are planned for 2027.
 
-**SAM: Central Asia = TAM × 0.495%**
-- Central Asia is 0.495% of the world economy: Kazakhstan $306.0B, Uzbekistan $147.1B, Turkmenistan $77.4B, Kyrgyzstan $22.6B, Tajikistan $17.5B, together $570.6B out of $115.3T (IMF, 2025).
-- We keep that share flat to 2030. This is conservative, because Central Asia grows faster than the world.
-- Results:
-  - Min: $7.7M in 2025, **$15.3M in 2030**.
-  - Mid: $42.8M in 2025, **$80.6M in 2030**.
-  - Max: $53.3M in 2025, **$262.7M in 2030**.
-- Turkmenistan's figure differs between sources ($77.4B or $49.8B). With the lower one, the 2025 mid SAM would be $41.7M.
+**Growth after 2025, each rate from a published report**
+- **Min, 13.5% a year:** GMI Insights, enterprise LLM market.
+- **Mid, 20.2% a year:** Market.us, sovereign (in-country) AI market.
+- **Max, 28.3% a year:** Research and Markets, enterprise LLM market.
+
+| Year | TAM min | TAM mid | TAM max | SAM min | SAM mid | SAM max |
+|---|---|---|---|---|---|---|
+| 2025 | $8.65B | $8.65B | $8.65B | $42.8M | $42.8M | $42.8M |
+| 2026 | $9.82B | $10.40B | $11.10B | $48.6M | $51.5M | $54.9M |
+| 2027 | $11.14B | $12.50B | $14.24B | $55.1M | $61.9M | $70.5M |
+| 2028 | $12.65B | $15.02B | $18.27B | $62.6M | $74.3M | $90.4M |
+| 2029 | $14.35B | $18.06B | $23.44B | $71.0M | $89.4M | $116.0M |
+| 2030 | $16.29B | $21.70B | $30.07B | $80.6M | $107.4M | $148.8M |
 
 **SOM: Uzbekistan, our own bottom-up plan**
 
-Paid seats × $9 a month × 12 = $108 a year per seat.
+Paid seats × $9 a month × 12 = $108 a year per seat. 2025 and 2026 are actual: no revenue.
 
 | Year | Min seats | Min revenue | Mid seats | Mid revenue | Max seats | Max revenue |
 |---|---|---|---|---|---|---|
+| 2025 | 0 | $0 | 0 | $0 | 0 | $0 |
 | 2026 | 0 | $0 | 0 | $0 | 0 | $0 |
 | 2027 | 60 | $6,480 | 300 | $32,400 | 800 | $86,400 |
 | 2028 | 400 | $43,200 | 2,000 | $216,000 | 5,000 | $540,000 |
@@ -199,7 +227,9 @@ Paid seats × $9 a month × 12 = $108 a year per seat.
 - 50 of 9,000+ private clinics × about 20 = 1,000;
 - 100 other companies × about 20 = 2,000.
 
-In 2030 the mid SOM is about 1.2% of the mid SAM (min 1.4%, max 0.8%). That's a small, believable slice.
+In 2030 the SOM is a small slice of the SAM: 0.3% in the min case, 0.9% in mid, 1.5% in max.
+
+Turkmenistan's GDP figure differs between sources ($77.4B or $49.8B). With the lower one, the 2025 SAM would be $41.7M.
 
 ## 8. Business model
 
@@ -287,6 +317,27 @@ What we'll use:
 - public Uzbek text (FineWeb-2: 1,098,843 Latin-script and 1,247,285 Cyrillic-script Uzbek documents);
 - examples written by a large open model and spot-checked by native speakers.
 
+## 10c. What your investment does
+
+**In 12 months, $25,000 turns a working preview into a business with paying customers.**
+
+| Milestone | Paid by | When |
+|---|---|---|
+| Company registered; installer signed, so Windows trusts it | App signing and company setup | First month |
+| Release 0.2.0 (text files), then 0.2.1 (PDF and Word, long-chat memory, any open model) | AI coding tools | November 2026, then early 2027 |
+| Proof of what runs where, on real machines from 4 GB laptops to company servers | Server and test hardware | First quarter |
+| Smaller, better models: good Uzbek and reliable agent tools on cheaper hardware | GPU rent: fine-tuning | Within 12 months |
+| More users, and companies that know us | Marketing | All year |
+| First 3 paying companies, about 300 seats ($32,400 a year, mid case) | Pilots: install and support | 2027 |
+
+Why it matters to an investor:
+- **A real product already exists.** It's a public preview anyone can download today and test against these claims.
+- **Low running costs.** We don't pay for every message the AI writes: it runs on the customer's own hardware. So our costs are building, updating and supporting the software, not running models, and that cost doesn't grow with every question a customer asks.
+- **A clear reason to buy.** For a team of 24, localSpace costs about 44% less than cloud AI per year, and the data stays inside the company (worked example in "How we calculated everything").
+- **A market that's growing.** Company spending on language-model AI grows 13.5–28.3% a year in the reports we use.
+- **Upside beyond our plan.** Our projections count Uzbekistan only. The other four Central Asian countries are about three times Uzbekistan's economy combined, and they aren't in the numbers.
+- **Terms:** we're open to standard pre-seed terms and would like to discuss them directly. We don't name a valuation on this page.
+
 ## 11. History: from the beginning
 
 | When | What happened |
@@ -331,13 +382,98 @@ What we'll use:
 - **Agent features are still in development.** Mitigation: the preview is public, so every claim can be checked.
 - **Fine-tuning may not reach every goal.** Mitigation: every model is measured with our test kit before release; if a smaller model isn't good enough, we keep the larger one.
 
+## 15b. How we calculated everything (a full "Method" section; each part also opens from a "How we got this" box in its own section)
+
+### Market: TAM, SAM, SOM
+
+1. **TAM 2025 = $8.65B.** This is what companies worldwide spent on language-model AI in 2025 (GMI Insights). We use it because local AI competes for the same budget: a company either pays a cloud service or runs AI itself.
+2. **TAM after 2025 = $8.65B × (1 + growth)^(years after 2025).** Each case uses a growth rate from a published report:
+   - Min, 13.5% a year (GMI Insights);
+   - Mid, 20.2% a year (Market.us, in-country "sovereign" AI);
+   - Max, 28.3% a year (Research and Markets).
+
+   Example, mid 2030: $8.65B × 1.202^5 = **$21.70B**.
+
+   2025 is the same in every case because it has already happened; only the future growth differs.
+3. **SAM = TAM × 0.495%.** There's no published figure for AI spending in Central Asia, so we use its share of the world economy: $570.6B out of $115.3T (IMF, 2025).
+
+   Example, 2025: $8.65B × 0.495% = **$42.8M**.
+4. **SOM = paid seats × $108 a year** ($9 a month × 12). The seats come from counting real organisations in Uzbekistan.
+
+   Example, mid 2029: 3 banks × 300 + 10 universities × 200 + 50 clinics × 20 + 100 companies × 20 = 5,900 seats; 5,900 × $108 = **$637,200**.
+
+   The min plan has about one sixth of the mid seats, for slow sales. The max plan has about twice the mid seats, for faster sales. In 2025 and 2026 we have no revenue, so the SOM is $0.
+
+### Hardware: speed, people served, cost per person
+
+Worked example: the default office desktop with an RTX 5060 Ti 16 GB and a 9B model.
+
+1. **Price:** the middle of the October 2026 range, ($1,700 + $2,000) ÷ 2 = $1,850.
+2. **Speed for one person = memory speed ÷ model size × efficiency.** Every word the AI writes reads the whole model from memory once, so memory speed sets the pace.
+   - Calculation: 448 GB/s ÷ 6.2 GB × 0.5 = **36 tokens a second**, about 27 words a second.
+   - The efficiency (0.5) comes from a public RTX 3090 benchmark. On laptops we use 0.38, which we measured ourselves.
+3. **Chats at once = the smaller of two limits.**
+   - Memory: (16 GB − 6.2 GB model − 1.5 GB kept free) ÷ 0.5 GB per conversation = 16.
+   - Speed: when people share the machine, it produces about 2.5× more in total. 36 × 2.5 ÷ 15 tokens a second each (a comfortable reading speed) = 6.
+   - So: **6 chats at once**.
+4. **Team size = 3–5 × chats at once = 18–30 people.** In an office, only about 20–33% of people are waiting for an answer at the same moment; the rest are reading, typing or doing other work.
+5. **Hardware cost per person = $1,850 ÷ 24** (the middle of 18–30) = **$77 once**. Spread over 3 years of use, that's $77 ÷ 36 = **$2.14 a month**.
+
+   This money goes to a shop, once. It isn't localSpace's price.
+
+### What it saves a company
+
+Example: a team of 24 people.
+
+| | Cloud AI | localSpace |
+|---|---|---|
+| Software, per year | $20 × 24 × 12 = $5,760 | $9 × 24 × 12 = $2,592 |
+| Hardware, per year | none | $1,850 ÷ 3 years = $617 |
+| **Total per year** | **$5,760** | **$3,209** |
+| Over 3 years | $17,280 | $9,626 |
+
+The company saves about **$2,550 a year (44%)** and its data never leaves the building.
+
+### Our pricing ($9)
+
+- $9 is less than half of cloud AI ($20 a person a month, billed yearly).
+- We can charge less because the AI runs on the customer's hardware: we don't pay for each message.
+- Personal use stays free; that's how people find us and how companies first try us.
+
+### GPU plan: hours and cost
+
+**Hours = tokens to train ÷ speed of one H100 ÷ 3,600.**
+
+| Model size | Speed per H100 | Source |
+|---|---|---|
+| 9B | about 11,000 tokens a second | from NVIDIA's measured 12,400 for an 8B model |
+| 4B | about 25,000 | |
+| 2B | about 45,000 | |
+
+Example, step 2 for the 9B model: 2,000,000,000 tokens ÷ 11,000 ÷ 3,600 = **about 50 hours**.
+
+The six steps add up to 784 hours. We add 50% (392 hours) for failed runs and tuning, which is normal in model training, for a total of 1,176 hours. At $3–5 an hour that's about $3,500–5,900. We budget $6,000 because GPU prices rose in 2026.
+
+### Words and tokens
+
+- AI models count text in tokens. One token is about three quarters of an English word, so 25 tokens a second is about 19 words a second.
+- Uzbek and Russian words use more tokens than English words, so in those languages the words-a-second figure is a little lower.
+
+### What is measured and what is estimated
+
+**Measured by us:**
+- Qwen3.5 4B on our 4 GB laptop: 25.1–25.6 tokens a second, in English, Russian and Uzbek, 24 October 2026.
+- Qwen3.5 9B on the same laptop: about 9 tokens a second.
+- Qwen3.5 4B with no graphics card: 6–7 tokens a second, 20 October 2026.
+
+**Estimated:** everything else in the hardware section, using the formulas above. We'll measure the server machines with our test kit; that's part of the use of funds.
+
 ## 15. Sources (every link used)
 
 Market:
-- GMI Insights, Enterprise LLM Market: https://www.gminsights.com/industry-analysis/enterprise-llm-market
-- Grand View Research, Enterprise AI Market: https://www.grandviewresearch.com/industry-analysis/enterprise-artificial-intelligence-market-report
-- Market.us, Sovereign AI Market: https://market.us/report/sovereign-ai-market/
-- Research and Markets, Enterprise LLM Market (cross-check: $5.65B in 2025 to $41.57B in 2033): https://www.researchandmarkets.com/reports/6176712/enterprise-llm-market-size-share-and-trends
+- GMI Insights, Enterprise LLM Market (TAM base, min growth 13.5%): https://www.gminsights.com/industry-analysis/enterprise-llm-market
+- Market.us, Sovereign AI Market (mid growth 20.2%): https://market.us/report/sovereign-ai-market/
+- Research and Markets, Enterprise LLM Market (max growth 28.3%): https://www.researchandmarkets.com/reports/6176712/enterprise-llm-market-size-share-and-trends
 - IMF GDP 2025 by country (via Worldometer): https://www.worldometers.info/gdp/gdp-by-country/?region=worldwide&year=2025&metric=nominal
 - World GDP 2025, $115.3T (IMF, via BusinessDay): https://businessday.ng/news/article/top-10-largest-economies-in-the-115tn-world-of-2025/
 - 34 banks in Uzbekistan (CERR, via Kun.uz): https://kun.uz/en/news/2026/07/27/uzbekistans-banking-sector-poss-two-thirds-increase-in-net-profit
