@@ -2,7 +2,7 @@
 
 This file holds every word and number for the investor page. The numbers in `data/*.json` are the same numbers in machine form. Use them as given. Don't round differently and don't invent new ones.
 
-Last updated: 24 October 2026.
+Last updated: 6 November 2026.
 
 **Layout:** CLAUDE.md sections 3 and 4 decide the page order and design. Where this file mentions cards, big numbers, circles or similar visuals, treat that as an old hint and follow CLAUDE.md. Take only the words, numbers and links from this file.
 
@@ -13,7 +13,7 @@ Last updated: 24 October 2026.
 - Name: **localSpace**
 - One line: **Private AI that runs on your own computer.**
 - Under it: Offline. On the laptop or server you already have. Built in Uzbekistan for everyone.
-- Stage chip: **Pre-seed · raising $25,000 · October 2026**
+- Stage chip: **Pre-seed · raising $25,000 · November 2026**
 - Buttons:
   - "Download the preview": https://linusip.github.io/localLabs/
   - "Join the community": https://t.me/localSpace_discussion
@@ -23,15 +23,16 @@ Last updated: 24 October 2026.
 
 - **Measured** numbers carry a "measured" badge: our own tests on real laptops.
 - **Estimates** carry an "estimate" badge, and each one has a "How we got this" box that shows the formula and a worked example.
+- **Counted** numbers carry a "counted" badge: counts taken from records, such as GitHub's download statistics.
 - Every outside number links to its source (full list at the bottom).
 - Money is in US dollars, at October 2026 prices.
-- Last updated: 24 October 2026.
+- Last updated: 6 November 2026.
 
 ## 1. Snapshot (four big numbers)
 
 | Number | Label |
 |---|---|
-| Live | Public preview, free to download (October 2026) |
+| 0.2.0 | Released 31 October 2026, free to download |
 | 10+ | Testers on their own laptops |
 | ~19 | Words a second on a 4 GB laptop graphics card (25 tokens a second, measured) |
 | ~5 | Words a second with no graphics card and 8 GB of memory (6–7 tokens a second, measured) |
@@ -56,22 +57,25 @@ One app. Private AI on the computer you have.
 - **Private and offline.** Nothing you type leaves the computer. No account needed.
 - **From laptop to company server.** Free for people; companies run it on their own server.
 
-What works in the public preview today:
+What works in release 0.2.0 today:
 - chat with open models from several makers (Qwen3.5, Gemma 4, Ministral), from 0.8B to 9B, chosen to fit the computer;
 - automatic model choice for the computer;
 - attaching pictures and screenshots;
+- attaching text files (.txt, .md, .csv and code, up to 2 MB);
 - English, Russian and Uzbek;
 - any graphics card (NVIDIA, AMD or Intel, through Vulkan) or none;
 - chats kept when updating.
 
+In preview (0.3.0-preview.1, 31 October 2026):
+- the new look: three colour schemes, and light or dark mode;
+- two small models from Liquid AI, LFM3 1.7B and LFM3-VL 2B, which you can pick in the model list. Their licence: "LFM Open License: free for personal use and for organisations under $10M yearly revenue; larger organisations need a licence from Liquid AI."
+
 Coming next:
-- **0.2.0, November 2026:** text-file attachments.
 - **0.2.1:**
   - context compacting for long chats;
   - PDF and Word files;
   - full app translation;
   - bring your own model: any open GGUF model from Hugging Face, up to 122B on big machines;
-  - a new design with three colour themes;
   - a CUDA edition for NVIDIA, if the licence review is cleared.
 - **2027:**
   - the AI agent that works with your files and tools offline;
@@ -80,26 +84,35 @@ Coming next:
 
 Our focus: **AI agents where everything stays with you.** One engine, easy to extend with your own tools, the way people use cloud assistants today, but local.
 
-## 4. Advantage
+## 4. Advantage: a market map
 
-Columns: localSpace, Ollama, LM Studio, ChatGPT / Claude. Marks: yes, partly (with extra setup), no.
+Title: **Nobody else packages private AI that works beyond chat.**
 
-| Row | localSpace | Ollama | LM Studio | ChatGPT / Claude |
-|---|---|---|---|---|
-| Everything stays on your computer | yes | yes | yes | no |
-| Easy for anyone: picks the right AI for your computer | yes | no | partly | yes |
-| AI agent that does tasks with your files, offline | yes* | no | partly | no |
-| Easy to add your own tools | yes* | no | partly | partly |
-| Company server, installed and supported for you | yes* | partly | no | no |
+- X axis: "Assemble it yourself" → "Packaged for the organisation".
+- Y axis: "Chat and documents" → "Works across domain tools".
+- Quadrants: top-left "Build it yourself, beyond chat"; top-right "Packaged, beyond chat: open" (highlighted); bottom-left "Developer tools for chat"; bottom-right "Enterprise private chat and agents".
 
-\* Show a small footnote under the table: "In development; planned for 2027. The public preview has chat, pictures and model choice." The founder chose ticks on the deck. The page is a permanent public document, so it carries this footnote, and the page must never claim these features work today.
+| Product | x | y |
+|---|---|---|
+| Ollama | 0.09 | 0.08 |
+| LM Studio | 0.17 | 0.20 |
+| Open WebUI | 0.29 | 0.10 |
+| AnythingLLM | 0.41 | 0.29 |
+| Zylon | 0.76 | 0.12 |
+| Cohere North | 0.83 | 0.30 |
+| localSpace (target position) | 0.81 | 0.76 |
+
+x and y run from 0 to 1, y going up. localSpace is highlighted and labelled "target position".
+
+Footnote: "Qualitative placement from each product's public positioning, November 2026. localSpace shows where we are building towards."
 
 ## 5. Proof: tested on real hardware
 
 - **Test A, 22 September 2026:** 10+ people used the first version on their own gaming laptops. All their feedback was about chat basics (stop button, several chats at once, dark mode, attachments, maths symbols). Fixes went into 0.2.
 - **Our 4 GB test laptop (RTX 3050 Ti), 24 October 2026:** Qwen3.5 4B read a photo of a handwritten integral and solved it correctly in English, Russian and Uzbek. It read the picture in about 17–18 seconds, then wrote at 25.1, 25.2 and 25.6 tokens a second (about 19 words a second). The Uzbek answer used one wrong term; we show it unedited on our site. Link: https://linusip.github.io/localLabs/
 - **No graphics card, 20 October 2026:** a Core i7 laptop with Intel Iris Xe and 8 GB of memory ran Qwen3.5 4B at 6–7 tokens a second (about 5 words a second) with a browser and VS Code open.
-- **Public preview, October 2026:** v0.2.0-preview.1 is public, with a download counter and a Telegram community.
+- **Releases, 31 October 2026:** localSpace 0.2.0 is released and free to download. File attaching works; the founder tested it on his laptop the same day. 0.3.0-preview.1 is out as a preview: the new look and Liquid AI's LFM3 models (LFM Open License: free for personal use and for organisations under $10M yearly revenue; larger organisations need a licence from Liquid AI). 0.2.0 and 0.3.0-preview.1 each passed 16 automated checks on a clean Windows machine before they were published.
+- **Downloads, 6 November 2026:** ~15 app downloads by people. Badge: "counted", not "measured". Method: GitHub release statistics show 34 downloads in total across v0.2.0-preview.1, v0.2.0 and v0.3.0-preview.1. We leave out the 10 checksum-file downloads and the installer downloads made by our own automated update checks. Some of the rest are our own installs.
 
 ## 6. Hardware: what it costs, how many people it serves, which models
 
@@ -273,30 +286,32 @@ Goal: our first 3 paying companies. In priority order:
 | 1 | App signing and company setup | $2,500 | Register the company; a Windows code-signing certificate (about $300–500 a year; Microsoft's own Artifact Signing isn't open to Uzbekistan) so Windows trusts the installer; simple pilot contracts |
 | 2 | AI coding tools | $3,000 | A $200-a-month coding assistant, GitHub, the domain |
 | 3 | Server and test hardware | $5,000 | A server we bring to company pilots, plus laptops with 4, 6 and 8 GB cards and an AMD machine, to prove what runs where |
-| 4 | Marketing | $5,000 | Telegram, university demos, events, videos |
-| 5 | GPU rent: fine-tuning | $6,000 | About 1,200 H100 hours at $3–5 an hour to make small models better and smaller, so localSpace needs less hardware (plan below) |
+| 4 | Marketing | $1,000 | Telegram community, university demos and short product videos |
+| 5 | GPU rent: fine-tuning | $10,000 | About 2,000 H100 hours at $3–5 an hour to make small models better and smaller, so localSpace needs less hardware (plan below) |
 | 6 | Pilots: install and support | $1,500 | Installing on site, travel and support for 3 companies |
 | 7 | Reserve | $2,000 | About 10% for price and exchange-rate changes |
 
 Or help with: 3 trial companies · 2 universities · GPU time · mentors.
 
-## 10b. The GPU plan: lowering the hardware bar ($6,000)
+## 10b. The GPU plan: lowering the hardware bar ($10,000)
 
 Why it matters: the smaller and smarter the model, the cheaper the computer that runs it. Every step below aims to give people and companies the same quality on cheaper hardware. Use `data/gpu_plan.json`; show the steps as a numbered list with hours, and the goals as three cards.
 
 | Step | Work | What it means | H100 hours |
 |---|---|---|---|
-| 1 | Make training examples with a big open model | A large open model (gpt-oss-120b / Qwen3.5 122B) writes Uzbek and Russian answers and agent tool-use examples; native speakers spot-check them | 45 |
-| 2 | Teach small models more Uzbek | Continued training of 2B, 4B and 9B models on about 2 billion tokens each: public Uzbek web text (FineWeb-2: 2.3 million Uzbek documents, Latin and Cyrillic) mixed with Russian and English | 85 |
-| 3 | Teach them chat and agent tool use (distillation) | Small models learn from the big model's examples in English, Russian and Uzbek: following instructions, calling tools reliably, reading files; 6 rounds for 2B, 4B and 9B | 153 |
+| 1 | Make training examples with a big open model | A large open model (gpt-oss-120b / Qwen3.5 122B) writes answers and agent tool-use examples in the 12 languages of our test kit, about 75M tokens per language; native speakers spot-check samples | 124 |
+| 2 | Teach small models more languages | Continued training of 2B, 4B and 9B models on about 4 billion tokens each: public web text in the 12 test-kit languages (for example FineWeb-2), about 330 million tokens per language | 170 |
+| 3 | Teach them chat and agent tool use (distillation) | Small models learn from the big model's examples in all 12 test-kit languages: following instructions, calling tools reliably, reading files; 6 rounds of 1.2B tokens for 2B, 4B and 9B | 306 |
 | 4 | Make models smaller: low-bit training | Quantization-aware training to about 2 bits per weight (ternary), so a 9B model needs about 2.5-3 GB instead of 6.2 GB: 10B tokens for the 4B, 5B tokens for the 9B | 339 |
-| 5 | Tune one strong model for company servers | Uzbek and agent tuning of a fast 30-35B mixture-of-experts model (about 8,000 tokens/s per GPU), 3 rounds of 600M tokens | 62 |
-| 6 | Test every version | Convert to GGUF, run our own test kit for speed and mistakes in three languages, test on big GPUs | 100 |
-| | Repeats: failed runs and tuning (about +50%) | | 392 |
-| | **Total** | | **1,176** |
+| 5 | Tune one strong model for company servers | Multilingual and agent tuning of a fast 30-35B mixture-of-experts model (about 8,000 tokens/s per GPU), 3 rounds of 1.2B tokens across the 12 languages | 125 |
+| 6 | Test every version | Convert to GGUF, run our own test kit for speed and mistakes in all 12 languages, on more model families (for example LFM3, under the LFM Open License, and Gemma), test on big GPUs | 250 |
+| | Repeats: failed runs and tuning (about +50%) | | 657 |
+| | **Total** | | **1,971** |
+
+The 12 languages of our test kit: English, Chinese, Spanish, Hindi, Arabic, Portuguese, Russian, French, German, Japanese, Turkish and Uzbek. The token amounts for them are estimates; the assumptions are at the top of `tools-src/gpu_plan.py`.
 
 Cost:
-- 1,176 hours × $3–5 an hour = about $3,528–5,880. The $6,000 budget assumes the upper end, because GPU prices rose in 2026.
+- 1,971 hours × $3–5 an hour = about $5,913–9,855. The $10,000 budget assumes the upper end, because GPU prices rose in 2026.
 - H100 prices in October 2026: $1.99–3.99 on RunPod and $3.29–4.29 on Lambda.
 - If idrock gives us GPU cluster time, this line shrinks and the money moves to pilots.
 
@@ -304,7 +319,7 @@ Goals, each measured with our own test kit before we claim it:
 
 | Goal | Target | What it changes |
 |---|---|---|
-| Good Uzbek on small machines | A tuned 4B model answers Uzbek as well as today's 9B on our test set | Good Uzbek at ~19 words/s on 4 GB laptop cards (today's 9B: ~7) and ~5 words/s with no graphics card |
+| Good answers in many languages on small machines | A tuned 4B model answers as well as today's 9B on our test set, in each of the 12 languages | Good answers at ~19 words/s on 4 GB laptop cards (today's 9B: ~7) and ~5 words/s with no graphics card |
 | A 9B model in 3 GB | Low-bit 9B keeps quality within a few points of the normal 9B on our test set | Fits fully on 4 GB cards; about twice the speed on any machine; a company server holds about twice as many conversations |
 | Agents on mid-range computers | Small models call tools correctly in 9 of 10 tries on our agent test set | The localSpace agent works on ordinary laptops, not only on big GPUs |
 
@@ -314,24 +329,24 @@ Why we think it works:
 
 What we'll use:
 - open models whose licences allow fine-tuning (for example Qwen, Apache 2.0);
-- public Uzbek text (FineWeb-2: 1,098,843 Latin-script and 1,247,285 Cyrillic-script Uzbek documents);
+- public web text in the 12 test-kit languages (FineWeb-2; its Uzbek part alone has 1,098,843 Latin-script and 1,247,285 Cyrillic-script documents);
 - examples written by a large open model and spot-checked by native speakers.
 
 ## 10c. What your investment does
 
-**In 12 months, $25,000 turns a working preview into a business with paying customers.**
+**In 12 months, $25,000 turns a released, working app into a business with paying customers.**
 
 | Milestone | Paid by | When |
 |---|---|---|
 | Company registered; installer signed, so Windows trusts it | App signing and company setup | First month |
-| Release 0.2.0 (text files), then 0.2.1 (PDF and Word, long-chat memory, any open model) | AI coding tools | November 2026, then early 2027 |
+| Release 0.2.1 (PDF and Word, long-chat memory, any open model), after 0.2.0 shipped on 31 October 2026 | AI coding tools | Early 2027 |
 | Proof of what runs where, on real machines from 4 GB laptops to company servers | Server and test hardware | First quarter |
-| Smaller, better models: good Uzbek and reliable agent tools on cheaper hardware | GPU rent: fine-tuning | Within 12 months |
+| Smaller, better models: good answers in many languages and reliable agent tools on cheaper hardware | GPU rent: fine-tuning | Within 12 months |
 | More users, and companies that know us | Marketing | All year |
 | First 3 paying companies, about 300 seats ($32,400 a year, mid case) | Pilots: install and support | 2027 |
 
 Why it matters to an investor:
-- **A real product already exists.** It's a public preview anyone can download today and test against these claims.
+- **A real product already exists.** Release 0.2.0 is free to download today, so anyone can test it against these claims.
 - **Low running costs.** We don't pay for every message the AI writes: it runs on the customer's own hardware. So our costs are building, updating and supporting the software, not running models, and that cost doesn't grow with every question a customer asks.
 - **A clear reason to buy.** For a team of 24, localSpace costs about 44% less than cloud AI per year, and the data stays inside the company (worked example in "How we calculated everything").
 - **A market that's growing.** Company spending on language-model AI grows 13.5–28.3% a year in the reports we use.
@@ -353,7 +368,7 @@ Why it matters to an investor:
 | October 2026 | Public preview v0.2.0-preview.1 released. Landing page with a download counter. Telegram community opened. |
 | 21 October 2026 | Licence decided: Apache 2.0 for the personal app and SDK; the company server stays closed. |
 | 24 October 2026 | Handwritten maths test passed in English, Russian and Uzbek. |
-| 11–12 November 2026 | Release 0.2.0 check (planned). |
+| 31 October 2026 | Release 0.2.0 and preview 0.3.0-preview.1 published. |
 
 ## 12. Team
 
@@ -450,9 +465,9 @@ The company saves about **$2,550 a year (44%)** and its data never leaves the bu
 | 4B | about 25,000 | |
 | 2B | about 45,000 | |
 
-Example, step 2 for the 9B model: 2,000,000,000 tokens ÷ 11,000 ÷ 3,600 = **about 50 hours**.
+Example, step 2 for the 9B model: 4,000,000,000 tokens ÷ 11,000 ÷ 3,600 = **about 101 hours**.
 
-The six steps add up to 784 hours. We add 50% (392 hours) for failed runs and tuning, which is normal in model training, for a total of 1,176 hours. At $3–5 an hour that's about $3,500–5,900. We budget $6,000 because GPU prices rose in 2026.
+The six steps add up to 1,314 hours. We add 50% (657 hours) for failed runs and tuning, which is normal in model training, for a total of 1,971 hours, about 2,000. At $3–5 an hour that's about $5,900–9,900. We budget $10,000 because GPU prices rose in 2026. The token amounts for the 12 languages are estimates; the assumptions are at the top of `tools-src/gpu_plan.py`.
 
 ### Words and tokens
 
@@ -528,6 +543,7 @@ Use of funds:
 
 Ours:
 - Speed numbers: our own measurements on our test laptops, October 2026.
+- Release download statistics (GitHub): https://github.com/LinusIp/localSpace-releases/releases
 - Product site and preview download: https://linusip.github.io/localLabs/
 - Community: https://t.me/localSpace_discussion
 
