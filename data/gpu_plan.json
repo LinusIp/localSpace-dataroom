@@ -1,33 +1,48 @@
 {
- "budget_usd": 6000,
- "core_hours": 784,
- "repeats_hours": 392,
- "total_hours": 1176,
+ "budget_usd": 10000,
+ "core_hours": 1314,
+ "repeats_hours": 657,
+ "total_hours": 1971,
  "cost_range": {
-  "at_2_usd": 2352,
-  "at_3_usd": 3528,
-  "at_4_usd": 4704
+  "at_2_usd": 3942,
+  "at_3_usd": 5913,
+  "at_4_usd": 7884,
+  "at_5_usd": 9855
  },
  "price_source": "H100: $1.99-2.69 community cloud, $2.89-3.99 secure cloud (RunPod), $3.29-4.29 (Lambda), Oct 2026",
- "note": "Repeats = failed runs and tuning, about +50%. The rest of the $6,000 covers 2026 GPU price rises. If idrock gives us GPU cluster time, this line shrinks.",
+ "note": "Repeats = failed runs and tuning, about +50%. The $10,000 budget assumes the upper end of $3-5 an hour. Token amounts for the 12 languages are estimates (see tools-src/gpu_plan.py). If idrock gives us GPU cluster time, this line shrinks.",
+ "languages": [
+  "English",
+  "Chinese",
+  "Spanish",
+  "Hindi",
+  "Arabic",
+  "Portuguese",
+  "Russian",
+  "French",
+  "German",
+  "Japanese",
+  "Turkish",
+  "Uzbek"
+ ],
  "steps": [
   {
    "step": 1,
    "name": "Make training examples with a big open model",
-   "detail": "A large open model (gpt-oss-120b / Qwen3.5 122B) writes Uzbek and Russian answers and agent tool-use examples; native speakers spot-check them",
-   "hours": 45
+   "detail": "A large open model (gpt-oss-120b / Qwen3.5 122B) writes answers and agent tool-use examples in the 12 languages of our test kit, about 75M tokens per language; native speakers spot-check samples",
+   "hours": 124
   },
   {
    "step": 2,
-   "name": "Teach small models more Uzbek",
-   "detail": "Continued training of 2B, 4B and 9B models on about 2 billion tokens each: public Uzbek web text (FineWeb-2: 2.3 million Uzbek documents, Latin and Cyrillic) mixed with Russian and English",
-   "hours": 85
+   "name": "Teach small models more languages",
+   "detail": "Continued training of 2B, 4B and 9B models on about 4 billion tokens each: public web text in the 12 test-kit languages (for example FineWeb-2), about 330 million tokens per language",
+   "hours": 170
   },
   {
    "step": 3,
    "name": "Teach them chat and agent tool use (distillation)",
-   "detail": "Small models learn from the big model's examples in English, Russian and Uzbek: following instructions, calling tools reliably, reading files; 6 rounds for 2B, 4B and 9B",
-   "hours": 153
+   "detail": "Small models learn from the big model's examples in all 12 test-kit languages: following instructions, calling tools reliably, reading files; 6 rounds of 1.2B tokens for 2B, 4B and 9B",
+   "hours": 306
   },
   {
    "step": 4,
@@ -38,21 +53,21 @@
   {
    "step": 5,
    "name": "Tune one strong model for company servers",
-   "detail": "Uzbek and agent tuning of a fast 30-35B mixture-of-experts model (about 8,000 tokens/s per GPU), 3 rounds of 600M tokens",
-   "hours": 62
+   "detail": "Multilingual and agent tuning of a fast 30-35B mixture-of-experts model (about 8,000 tokens/s per GPU), 3 rounds of 1.2B tokens across the 12 languages",
+   "hours": 125
   },
   {
    "step": 6,
    "name": "Test every version",
-   "detail": "Convert to GGUF, run our own test kit for speed and mistakes in three languages, test on big GPUs",
-   "hours": 100
+   "detail": "Convert to GGUF, run our own test kit for speed and mistakes in all 12 languages, on more model families (for example LFM3, under the LFM Open License, and Gemma), test on big GPUs",
+   "hours": 250
   }
  ],
  "goals": [
   {
-   "name": "Good Uzbek on small machines",
-   "target": "A tuned 4B model answers Uzbek as well as today's 9B on our test set",
-   "effect": "Good Uzbek at ~19 words/s on 4 GB laptop cards (today's 9B: ~7) and ~5 words/s with no graphics card"
+   "name": "Good answers in many languages on small machines",
+   "target": "A tuned 4B model answers as well as today's 9B on our test set, in each of the 12 languages",
+   "effect": "Good answers at ~19 words/s on 4 GB laptop cards (today's 9B: ~7) and ~5 words/s with no graphics card"
   },
   {
    "name": "A 9B model in 3 GB",

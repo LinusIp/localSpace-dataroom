@@ -224,9 +224,51 @@ check(!/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(words), 'page text has an 
 check(!/gradient\(|backdrop-filter|box-shadow/.test(css), 'styles.css has a gradient, blur or shadow');
 for (const [, r] of all(/border-radius:\s*(\d+)px/g, css)) check(+r <= 8, `styles.css has a ${r}px corner (over 8 px)`);
 
-// Footer date matches the content file
+// Every "Last updated" date (plain text or <time>), the page footer and the PDF footer match the content file
 const updated = md.match(/Last updated: ([^.\n]+)/)[1];
-check(html.includes(`>${updated}</time>`), `last-updated date differs from content ("${updated}")`);
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const said = [
+  ...all(/Last updated:?\s*(?:<time datetime="([^"]*)">)?([^<.]*)/g).map((m) => ['index.html', m[2].trim(), m[1]]),
+  ...all(/Last updated:?\s*([^.\n]*)/g, md).map((m) => ['content/dataroom.md', m[1].trim()]),
+  ...all(/investor data room, ([^"<·]*?)\s*(?:·|"|<)/g).map((m) => ['index.html footer', m[1].trim()]),
+  ...all(/investor data room, ([^"<·]*?)\s*(?:·|"|<)/g, css).map((m) => ['styles.css PDF footer', m[1].trim()]),
+];
+check(said.filter((s) => s[0] === 'index.html').length >= 3 && said.some((s) => s[0] === 'styles.css PDF footer'), 'dates: fewer "Last updated" lines or footers found than expected');
+for (const [where, date, attr] of said) {
+  check(date === updated, `${where}: says "${date}", content says "${updated}"`);
+  if (attr !== undefined) {
+    const [y, mo, d] = attr.split('-').map(Number);
+    check(`${d} ${MONTHS[mo - 1]} ${y}` === updated, `${where}: <time datetime="${attr}"> differs from "${updated}"`);
+  }
+}
+const month = updated.split(' ').slice(1).join(' ');
+check(html.includes(`raising $25,000, ${month}.`), `meta description should say ${month}`);
+check(md.includes(`Pre-seed · raising $25,000 · ${month}**`), `content: the stage chip should say ${month}`);
+
+// Market map: every point on the page matches the table in content section 4
+const sec4 = md.slice(md.indexOf('## 4. Advantage'), md.indexOf('## 5.'));
+const mdPts = all(/^\| ([^|]+?) \| ([\d.]+) \| ([\d.]+) \|$/gm, sec4).map((m) => [m[1].replace(' (target position)', ''), +m[2], +m[3]]);
+const pagePts = all(/<span class="mpt[^"]*" style="left:([\d.]+)%;bottom:([\d.]+)%" data-name="([^"]+)" data-x="([\d.]+)" data-y="([\d.]+)">/g).map((m) => [m[3], +m[4], +m[5], +m[1], +m[2]]);
+check(mdPts.length === 7 && pagePts.length === mdPts.length, `market map: ${pagePts.length} points on the page, ${mdPts.length} in content section 4`);
+for (const [name, x, y] of mdPts) {
+  const p = pagePts.find((q) => q[0] === name);
+  check(p && p[1] === x && p[2] === y && Math.abs(p[3] - x * 100) < 0.01 && Math.abs(p[4] - y * 100) < 0.01, `market map: ${name} should be at ${x}, ${y}`);
+}
+check(html.includes('<span class="mpt us left"') && html.includes('localSpace<small>target position</small>'), 'market map: localSpace must be highlighted and labelled "target position"');
+
+// Downloads: the page shows the content file's figure, counted, never called users
+const dl = md.match(/~(\d+) app downloads by people/);
+const dlRow = html.match(/<tr id="downloads">([\s\S]*?)<\/tr>/)?.[1] ?? '';
+check(dl && dlRow.includes(`data-downloads="${dl[1]}">~${dl[1]}<`) && dlRow.includes('badge c">counted') && !dlRow.includes('badge m'), 'downloads: the row must show the content figure with a "counted" badge');
+check(!/\b\d+ users\b|~\d+ users/i.test(words), 'page text calls downloads users');
+
+// GPU plan: the cost range on the page comes from the hours, and the top of it fits the budget
+check(gpu.total_hours * 5 <= gpu.budget_usd && funds.priority_order.find((x) => x.rank === 5).usd === gpu.budget_usd, 'GPU: hours × $5 exceed the budget, or the funds line differs from the GPU budget');
+check(html.includes(`${n(gpu.total_hours)} hours × $3–5 an hour = about $${n(gpu.total_hours * 3)}–${n(gpu.total_hours * 5)}`), 'GPU: the cost range on the page differs from the hours');
+check(!/good uzbek/i.test(words), 'page text still names "good Uzbek" as the goal');
+
+// LFM3: wherever the page names it, the same paragraph or cell shows its licence
+for (const [, block] of all(/<(?:p|li|dd|td)\b[^>]*>((?:(?!<\/?(?:p|li|dd|td)\b)[\s\S])*?LFM3[\s\S]*?)<\/(?:p|li|dd|td)>/g, body)) check(block.includes('LFM Open License'), `LFM3 named without its licence: "${text(block).slice(0, 70)}"`);
 
 if (fails.length) {
   console.error(`FAILED ${fails.length} of ${fails.length + passes} checks:`);

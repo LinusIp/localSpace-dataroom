@@ -22,13 +22,14 @@
   {
    "rank": 4,
    "line": "Marketing",
-   "usd": 5000
+   "usd": 1000,
+   "detail": "Telegram community, university demos and short product videos"
   },
   {
    "rank": 5,
    "line": "GPU rent: fine-tuning",
-   "usd": 6000,
-   "detail": "About 1,200 H100 hours at $3-5 an hour to make small models better and smaller, so localSpace needs less hardware; see data/gpu_plan.json"
+   "usd": 10000,
+   "detail": "About 2,000 H100 hours at $3-5 an hour to make small models better and smaller, so localSpace needs less hardware; see data/gpu_plan.json"
   },
   {
    "rank": 6,
